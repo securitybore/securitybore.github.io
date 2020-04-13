@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/xhtml-strict.dtd">
+<html>
+	<head>
+		<title>Bores Signal Processing - Advanced DSP - FFT windows: processing and scalloping loss</title>
+		<!-- validated xhtml -->
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="keywords" content="Bores signal processing, training, DSP, FIR, IIR, filters, Fast Fourier Transforms, FFT, VLIW, aliasing, impulse response, windows, matched filters" />
+		<meta name="author" content="Bores Signal Processing" />
+		<meta name="description" content="Training in DSP, software architectures and Philips TriMedia architectures" />
+		<link href="../../../css/global.css" rel="stylesheet" />
+		<script type ="text/javascript">
+			<!--Hide script from old browsers
+			//intro to dsp index
+			var page = "online_advanced_windows_sec";
+			var section = "index_online_sec_sec";
+			var curr1PageIndex = 2;
+			var curr2PageIndex = 1;
+			var curr3PageIndex = 5;
+			//end hiding of script -->
+		</script>
+	</head>
+	<body>
+		<div id="outerWrapper">
+			<div id="innerWrapper">
+				<noscript><p class="declaration">This web site uses Javascript. We use Javascript to improve the user's experience and to enable better maintenance of our site.<br /><br />To be able to view this site properly it is necessary to either <span class="emphasis">enable Javascript</span> or click on <span class="emphasis">allow blocked content</span><br /><br />We promise that we <span class="emphasis">do not:</span></p><ul class="middle"><li>give you content you do not want</li><li>collect any information from your computer</li><li>damage data on your computer</li><li>install software on your computer with or without your consent</li><li>allow someone else to  your computer remotely</li></ul></noscript>
+				<img class="right" src="../../../graphics/composite_training_banner.jpg" alt="We offer training classes and eBooks on DSP, and in Media Processing (TriMedia)" title="We offer training classes and eBooks on DSP, and in Media Processing (TriMedia)" height="99" width="300" />
+				<img alt="Company logo" title="Bores Signal Processing logo" src="../../../graphics/logo.gif" height="100" width="150" />			
+				<h1>Advanced DSP - FFT windows: processing and scalloping loss</h1> 
+				<div class="hMenu">
+					<script type="text/javascript" src="../../../scripts/horizontal_menu.js"></script>
+				</div>
+				<table class="main">
+					<tr>
+						<td class="menuCell">
+							<script type="text/javascript" src="../../../scripts/courses_menu.js"></script>
+						</td>
+						<td class="mainCell">
+							<p>In detecting a signal from noise, it is the <span class="red">signal to noise ratio</span> that is important. The <a href="../../intro/freq/3_window.htm">window function</a> affects the signal to noise ratio because the measured value at the <a href="10_kern.htm">FFT bin</a> includes noise from the whole bandwidth of the window function's <a href="10_kern.htm">kernel</a>. We need to compare the amount by which the window function attenuates the signal, with the amount of noise the window function collects:</p> 
+							<ul> 
+		  					<li>attenuation of the signal by the window function is measured by the <a href="10_cpg.htm">Coherent Power Gain</a></li> 
+		  					<li>the amount of noise collected by the window function is measured by the <a href="10_enb.htm">Equivalent Noise Bandwidth</a></li> 
+							</ul> 
+							<p><span class="red">Processing Loss</span> measures the degradation in signal to noise ratio due to the window function. It is the ratio of <a href="10_cpg.htm">Coherent Power Gain</a> to Equivalent Noise Bandwidth.</p>
+							<p>For a signal made up of one ideal discrete single line <a href="../../intro/freq/3_spect.htm">frequency component</a> the Coherent Power Gain is 1 and so the <span class="red">Processing Loss</span> is (not surprisingly) just the reciprocal of the Equivalent Noise Bandwidth.</p> 
+							<p>Processing Loss only relates to signal frequency components that happen to fall exactly on an FFT bin. But the model of the the <a href="../../intro/freq/3_ft.htm">Fourier Transform</a> as a series of filters centred on each FFT bin suggests that frequencies that do not happen to fall exactly on an FFT bin will not be measured at 100% of their full value as the window function's kernel response falls off away from its centre frequency. In fact one can imagine that the measured value will fall off as the actual signal frequency component's frequency moves away from the FFT bin frequency:</p>
+							<img src="gifs/10_pl.gif" width="512" height="308" title="Scalloping loss" alt="Scalloping loss" /> 
+							<p>The effect is to make the measured value dip as the actual frequency moves between FFT bins: this effect is sometimes called the 'picket fence effect' or (because it looks a bit like the edge of a scallop shell) 'scalloping'. It is a reasonable assumption that the worst case occurs when the actual signal frequency falls exactly half way between FFT bins.</p> 
+							<p><span class="red">Scalloping Loss</span> is the apparent attenuation of the measured value for a frequency component that falls exactly half way between FFT bins. It is defined as the ratio of the power gain for a signal frequency component located half way between FFT bins, to the Coherent Power Gain for a signal frequency component located exactly on the FFT bin.</p> 
+							<p>Scalloping Loss can be calculated by taking the ratio of the value of the window function's kernel one half a a frequency sample off centre, to its value at the centre.</p> 
+							<p><span class="red">Worst Case Processing Loss</span> is the sum of Processing Loss and Scalloping Loss. This is a measure of the worst case reduction of <span class="red">signal to noise ratio</span> which results from the combination of the window function and the worst case frequency location. It is related to the minim amplitude for a signal frequency component to be detected in broadband noise.</p> 
+							<p>
+								<img class="right" src="../../gifs/buttons.jpg" usemap="#map1" width="171" height="18" title="Forward reverse buttons" alt="click to move backward/forward" /> 
+		          		<map name="map1" id="map1">
+			          		<area shape="rect" coords="2,3,42,15" href="index.htm" alt="go back to start of module" /><!--go back to start of module -->
+			          		<area shape="rect" coords="43,2,84,16" href="10_enb.htm" alt="go back to previous page" /><!--go back to previous page -->
+			          		<area shape="rect" coords="84,2,127,15" href="10_leak.htm" alt="go to next page" /><!--go to next page -->
+			          		<area shape="rect" coords="126,2,169,16" href="10_end.htm" alt="go to end of module" /><!--go to next module -->  
+		          		</map>
+									<img class="right" src="../../gifs/copyrite.jpg" width="171" height="20"	alt="Copyrite:Bores Signal Processing" /> <br /><br /><br /><br />
+		        		</p>
+		      		</td>
+			  		</tr>
+					</table>	
+				</div>
+				<hr></hr>
+				<div class="footer">
+					<script type="text/javascript" src="../../../scripts/address_level4.js"></script>
+  			</div>
+			</div>		
+		</body>
+</html>

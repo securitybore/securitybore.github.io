@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/xhtml-strict.dtd">
+<html> 
+	<head>
+  	<title>Bores Signal Processing - Introduction to DSP - mathematics</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="keywords" content="DSP online teaching signals digital signal processing IIR FIR filters frequency response window functions" />
+		<meta name="author" content="Bores Signal Processing" />
+		<meta name="description" content="Training in DSP, software architectures and Philips TriMedia architectures" />
+		<link href="../../../css/global.css" rel="stylesheet" />
+		<script type ="text/javascript">
+			<!--Hide script from old browsers
+			var page = "online_dsp_chips_sec"; // for courses_menu
+			var section = "index_online_sec_sec";  //for horizontal menu
+			var curr1PageIndex = 1;  //level1 of the menu
+			var curr2PageIndex = 6;	//level2 of the menu
+			var curr3PageIndex = 2;	//level3 of the menu		
+			//end hiding of script -->
+		</script>
+		<!-- validated -->
+	</head>
+  <body>
+	   <div id="outerWrapper">
+		  <div id="innerWrapper">
+				<noscript><p class="declaration">This web site uses Javascript. We use Javascript to improve the user's experience and to enable better maintenance of our site.<br /><br />To be able to view this site properly it is necessary to either <span class="emphasis">enable Javascript</span> or click on <span class="emphasis">allow blocked content</span><br /><br />We promise that we <span class="emphasis">do not:</span></p><ul class="middle"><li>give you content you do not want</li><li>collect any information from your computer</li><li>damage data on your computer</li><li>install software on your computer with or without your consent</li><li>allow someone else to  your computer remotely</li></ul></noscript>
+			  <img class="right" src="../../../graphics/composite_training_banner.jpg" alt="We offer training classes and eBooks on DSP, and in Media Processing (TriMedia)" title="We offer training classes and eBooks on DSP, and in Media Processing (TriMedia)" height="99" width="300" />
+			  <img alt="Company logo" title="Bores Signal Processing logo" src="../../../graphics/logo.gif" height="100" width="150" />
+			  <h1>Introduction to DSP - DSP processors: mathematics</h1>
+			  <div class="hMenu">
+				  <script type="text/javascript" src="../../../scripts/horizontal_menu.js"></script>
+			  </div>
+			  <table class="main">
+				  <tr>
+					  <td class="menuCell">
+						  <script type="text/javascript" src="../../../scripts/courses_menu.js"></script>
+					  </td>
+					  <td class="mainCell"> 
+							<p>To perform the simple arithmetic required, DSP processors need special high speed arithmetic units.</p> 
+							<p><img src="gifs/6_ops2.gif" width="51" height="25" title="additions" alt="additions" />Most DSP operations require <span class="red">additions and multiplications</span> together. So DSP processors usually have hardware adders and multipliers which can be used in parallel within a single instruction:</p>
+							<img src="gifs/6_dp.gif" width="512" height="292" title="DSP hardware" alt="DSP hardware" /> 
+							<p>The diagram shows the <span class="red">data path</span> for the Lucent DSP32C processor. The hardware multiply and add work in parallel so that in the space of a single instruction, both an add and a multiply can be completed. </p> 
+							<p><img src="gifs/6_ops3.gif" width="29" height="25" title="Delays" alt="delays" /><span class="red">Delays</span> require that intermediate values be held for later use. This may also be a requirement, for example, when keeping a running total - the total can be kept within the processor to avoid wasting repeated reads from and writes to memory. For this reason DSP processors have lots of <span class="red">registers</span> which can be used to hold intermediate values:</p>
+							<img src="gifs/6_ireg.gif" width="52" height="50" title="Registers" alt="registers" /><img src="gifs/6_flreg.gif" width="52" height="50" title="Registers" alt="registers" /> 
+							<p>Registers may be <a href="6_data.htm">fixed point</a> or <a href="6_data.htm">floating point</a> format.</p> 
+							<p><img src="gifs/6_ops4.gif" width="50" height="25" title="Array handling" alt="array handling" /><span class="red">Array handling</span> requires that data can be fetched efficiently from consecutive memory locations. This involves generating the next required memory address. For this reason DSP processors have <span class="red">address registers</span> which are used to hold addresses and can be used to generate the next needed address efficiently:</p>
+							<img src="gifs/6_areg.gif" width="52" height="50" title="Address registers" alt="address registers" /> 
+							<p>The ability to generate new addresses efficiently is a characteristicfe ature of DSP processors. Usually, the next needed address can be generated during the data fetch or store operation, and with no overhead. DSP processors have rich sets of address generation operations:</p> 
+							<table> 
+		  					<tr> 
+			 						<td> *rP</td><td> register indirect </td><td> read the data pointed to by the address in register rP </td> 
+		  					</tr> 
+		  					<tr> 
+			 					<td> *rP++ </td><td> postincrement </td><td> having read the data, postincrement the address pointer to point to the next value in the array </td> 
+		  					</tr> 
+		  					<tr> 
+			 						<td> *rP-- </td><td> postdecrement </td><td> having read the data, postdecrement the address pointer to point to the previous value in the array </td> 
+		  					</tr> 
+		  					<tr> 
+			 						<td> *rP++rI </td><td>register postincrement </td><td> having read the data, postincrement the address pointer <span class="italic">by the amount held in register rI</span> to point to <span class="italic">rI</span> values further down	the array </td> 
+  		  				</tr> 
+		  					<tr> 
+			 						<td> *rP++rIr </td><td> bit reversed </td><td> having read the data, postincrement the address pointer to point	to the next value in the array, <span class="italic">as if the address bits were in bit reversed	order </span></td> 
+		  					</tr> 
+							</table> 
+							<p>The table shows some addressing modes for the Lucent DSP32C processor. The assembler syntax is very similar to C language. Whenever an operand is fetched from memory using register indirect addressing, the address register can be incremented to point to the next needed value in the array. This address increment is free - there is no overhead involved in the address calculation - and in the case of the Lucent DSP32C processor up to three such addresses may be generated in each single instruction. Address generation is an important factor in the speed of DSP processors at their specialised operations.</p> 
+							<p>The last addressing mode - bit reversed - shows how specialised DSP processors can be. Bit reversed addressing arises when a table of values has to be reordered by reversing the order of the address bits:</p> 
+							<ul> 
+		  					<li>reverse the order of the bits in each address</li> 
+		  					<li>shuffle the data so that the new, bit reversed, addresses are in ascending order</li> 
+							</ul> 
+							<p>This operation is required in the <a href="../freq/3_ft.htm">Fast Fourier Transform</a> - and just about nowhere else. So one can see that DSP processors are designed specifically to calculate the Fast Fourier Transform efficiently.</p> 
+							<p>
+								<img class="right" src="../gifs/buttons.jpg" usemap="#map1" width="171" height="18" alt="backward/forward" /> 
+		  			    <map name="map1" id="map1">
+			 			      <area shape="rect" coords="2,3,42,15" href="index.htm" alt="go back to start of module" /><!--go back to start of module -->
+			 			      <area shape="rect" coords="43,2,84,16" href="6_basics.htm" alt="go back to previous page" /><!--go to previous page -->
+			 			      <area shape="rect" coords="84,2,127,15" href="6_world.htm" alt="go to next page" /><!--go to next page -->
+			 			      <area shape="rect" coords="126,2,169,16" href="../program/index.htm" alt="go to next module" /><!-- go to next module -->  
+		  			    </map>
+					    </p>
+				    </td>
+			    </tr>
+		    </table>	
+		  </div>
+		  <hr></hr>
+		  <div class="footer">
+				<script type="text/javascript" src="../../../scripts/address_level4.js"></script>
+  		</div>
+		</div>		
+	</body>
+</html>

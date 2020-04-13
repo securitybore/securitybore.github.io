@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+	<title>Bores Signal Processing: DSP with dsPIC</title>
+	<meta name="author" content="Bores Signal Processing" />
+	<meta name="description" content="Training classes and consultancy for DSP, Image Processing and NXP TriMedia processor" />
+	<meta name="keywords" content="Bores signal processing,training,DSP,FIR,IIR,filters,Fast Fourier Transforms,FFT,mpeg,multimedia" />	
+  <link href="../css/global.css" rel="stylesheet" type="text/css" />
+	<script type ="text/javascript" src="../scripts/newWindow.js"></script>
+</head>
+<body>
+	<div id="outerWrapper">
+		<div id="innerWrapper">
+			<noscript><p class="declaration">This web site uses Javascript. We use Javascript to improve the user's experience and to enable better maintenance of our site.<br /><br />To be able to view this site properly it is necessary to either <span class="emphasis">enable Javascript</span> or click on <span class="emphasis">allow blocked content</span><br /><br />We promise that we <span class="emphasis">do not:</span></p><ul class="middle"><li>give you content you do not want</li><li>collect any information from your computer</li><li>damage data on your computer</li><li>install software on your computer with or without your consent</li><li>allow someone else to  your computer remotely</li></ul></noscript>		
+			<h1>DSP with dsPIC</h1>
+			<table class="main">
+				<tr>
+					<td class="mainCell">
+						
+						</ul>
+						<h3>CONTENTS:</h3>
+						<h4>Basics:</h4>
+						<ul>
+							<li>DSP applications</li>
+							<li>Advantages of digital</li>
+							<li>Advantages of programmable</li>
+						</ul>
+						<h4>Signals</h4>
+						<ul>
+							<li>Signals</li>
+							<li>Digital signals</li>
+							<li>Signals as things</li>
+							<li>Dimensions and units</li>
+							<li>Signal structure</li>
+							<li>Signal and Noise</li>
+							<li>Power</li>
+							<li>Signal to Noise Ratio</li>
+							<li>Noise Floor</li>
+						</ul>
+						<h4>Processing Gain:</h4>
+						<ul>
+							<li>Figures of Merit</li>
+							<li>Processing Gain</li>
+							<li>Equivalent Noise Bandwidth</li>
+							<li>Scalloping Loss</li>
+							<li>Resolution</li>
+						</ul>
+						<h4>Frequency:</h4>
+						<ul>
+							<li>Spectral analysis</li>
+							<li>Frequency in DSP</li>
+							<li>Frequency</li>
+							<li>Fourier’s theorem</li>
+							<li>Fourier Transforms</li>
+							<li>Time and frequency domains</li>
+							<li>Tuning fork spectrum analyzer</li>
+							<li>Ear as a spectrum analyzer</li>
+							<li>FT equations</li>
+							<li>Convolution</li>
+							<li>Convolution in frequency</li>
+							<li>Convolution due to sampling</li>
+						</ul>
+						<h4>Complex frequency</h4>
+						<ul>
+							<li>Angular frequency</li>
+							<li>Negative frequency</li>
+							<li>Complex numbers</li>
+							<li>Complex addition</li>
+							<li>Complex multiplication</li>
+							<li>Complex oscillators</li>
+							<li>Complex frequency</li>
+							<li>Real valued signals</li>
+							<li>Spectral symmetry</li>
+						</ul>
+						<h4>Window functions</h4>
+						<ul>
+							<li>Short Fourier Transforms</li>
+							<li>Truncation</li>
+							<li>Periodicity</li>
+							<li>Exact fit</li>
+							<li>Spectral leakage</li>
+              <li>Windowing</li>
+              <li>Window distortion</li>
+              <li>Window kernels</li>
+              <li>Coherent gain</li>
+              <li>Equivalent Noise Bandwidth</li>
+              <li>Scalloping Loss</li>
+              <li>Resolution</li>
+              <li>Window functions</li>
+						</ul>
+						<h4>Sampling</h4>
+						<ul>
+							<li>Digital signals</li>
+							<li>Conversion</li>
+							<li>Sampling</li>
+							<li>Sample</li>
+							<li>Non-ideal sampling</li>
+							<li>Hold</li>
+							<li>Timing error</li>
+							<li>Sampling intervals</li>
+							<li>Resolution</li>
+							<li>Aliasing</li>
+							<li>Nyquist</li>
+							<li>Anti-aliasing</li>
+							<li>Impulse response</li>
+							<li>Reconstruction</li>
+							<li>Misconstruction</li>
+							<li>Multirate aliasing</li>
+							<li>Multirate sampling</li>
+						</ul>
+						<h4>Sizing</h4>
+						<ul>
+							<li>Signal and noise</li>
+							<li>Power</li>
+							<li>Signal to noise ratio</li>
+							<li>Noise floor</li>
+							<li>Quantization noise</li>
+							<li>Quantization noise and bit depth</li>
+							<li>Processing gain</li>
+							<li>Equivalent Noise Band-Width</li>
+							<li>ADC bit depth</li>
+							<li>ADC bit depth example</li>
+							<li>Distortion</li>
+							<li>Sampling</li>
+							<li>Sample rate example</li>
+							<li>Filter length</li>
+							<li>Filter length example</li>
+							<li>Arithmetic bit depth</li>
+							<li>Bit depth example</li>
+							<li>CPU bit depth</li>
+							<li>Complexity</li>
+							<li>Computational model</li>
+							<li>Operations</li>
+							<li>Code transforms</li>
+							<li>Computational costs</li>
+							<li>Complexity example</li>
+							<li>CPU selection</li>
+						</ul>
+						<h4>Discrete Fourier Transform:</h4>
+						<ul>
+							<li>DFT equations</li>
+							<li>DFT implementations</li>
+							<li>DFT resolution</li>
+							<li>DFT Processing Gain</li>
+							<li>DFT computational complexity</li>
+							<li>DFT applications</li>
+						</ul>		
+						<h4>Filtering:</h4>
+						<ul>
+							<li>Averaging</li>
+							<li>Moving average</li>
+							<li>Correlation</li>
+							<li>Correlation as weighted moving average</li>
+							<li>Convolution</li>
+							<li>Convolution and correlation</li>
+							<li>Symmetry</li>
+							<li>Correlation as comparison</li>
+							<li>Convolution to smooth</li>
+							<li>Linear filter equation</li>
+							<li>Filter equation as delayed copies</li>
+							<li>Convolution in frequency</li>
+							<li>Filtering as a frequency operation</li>
+							<li>Digital filter specification</li>
+							<li>Filtering in frequency</li>
+							<li>Filter as convolution</li>
+							<li>Filter frequency response</li>
+							<li>Filter impulse response</li>
+							<li>Impulse response as delayed copies</li>
+							<li>Finite Impulse Response filter</li>
+							<li>Infinite Impulse Response filters</li>
+							<li>Filter implementations</li>
+							<li>Filter resolution</li>
+							<li>Filter Processing Gain</li>
+						</ul>		
+						<h4>Filtering to enhance signal to noise ratio:</h4>
+						<ul>
+							<li>Signal averaging</li>
+							<li>Signal averaging Processing Gain</li>
+							<li>Filter Processing Gain</li>
+							<li>Matched Filters</li>
+							<li>Matched Filter Processing Gain</li>
+						</ul>
+						<h4>Filtering applications:</h4>
+						<ul>
+							<li>Effects of filtering</li>
+							<li>Filter as delayed copies</li>
+							<li>Echo</li>
+							<li>Reverb</li>
+							<li>Reverb as delayed copies</li>
+							<li>Chorusing</li>
+							<li>Transmission as a filter</li>
+							<li>Equalization</li>
+							<li>Compensation</li>
+							<li>Sound field virtualization</li>
+							<li>Crossover</li>
+							<li>Sub bands</li>
+						</ul>
+						<h4>FIR filter design:</h4>
+						<ul>
+							<li>Finite Impulse Response filter</li>
+							<li>FIR filter implementation</li>
+							<li>Filter length</li>
+							<li>Filter length example</li>
+							<li>FIR frequency response</li>
+							<li>FIR coefficients</li>
+							<li>FIR design (naïve)</li>
+							<li>FIR design (truncated)</li>
+							<li>FIR design (windowing)</li>
+							<li>FIR design (window method)</li>
+							<li>FIR design – limitations of windows</li>
+							<li>FIR design – window kernels</li>
+							<li>FIR design (equiripple)</li>
+						</ul>
+						<h4>Correlation</h4>
+						<ul>
+							<li>Autocorrelation</li>
+							<li>Autocorrelation to separate signals</li>
+							<li>Autocorrelation Processing Gain</li>
+							<li>Cross correlation to locate a signal</li>
+							<li>Cross correlation to identify a signal</li>
+							<li>Cross correlation Processing Gain</li>
+						</ul>										
+					</td>
+				</tr>				
+			</table>
+		</div>
+	</div>
+</body>
+</html>

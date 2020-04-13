@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/xhtml-strict.dtd">
+<html> 
+	<head>
+  	<title>Bores Signal Processing - Introduction to DSP - Filtering: frequency selective	process</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="keywords" content="DSP online teaching signals digital signal processing IIR FIR filters frequency response window functions" />
+		<meta name="author" content="Bores Signal Processing" />
+		<meta name="description" content="Training in DSP, software architectures and Philips TriMedia architectures" />
+		<link href="../../../css/global.css" rel="stylesheet" />
+		<script type ="text/javascript">
+			<!--Hide script from old browsers
+			var page = "online_dsp_filters_sec";
+			var section = "index_online_sec_sec";
+			var curr1PageIndex = 1;
+			var curr2PageIndex = 4;
+			var curr3PageIndex = 1;			
+			//end hiding of script -->
+		</script>
+		<!-- validated -->
+	</head>
+  <body>
+	   <div id="outerWrapper">
+		  <div id="innerWrapper">
+				<noscript><p class="declaration">This web site uses Javascript. We use Javascript to improve the user's experience and to enable better maintenance of our site.<br /><br />To be able to view this site properly it is necessary to either <span class="emphasis">enable Javascript</span> or click on <span class="emphasis">allow blocked content</span><br /><br />We promise that we <span class="emphasis">do not:</span></p><ul class="middle"><li>give you content you do not want</li><li>collect any information from your computer</li><li>damage data on your computer</li><li>install software on your computer with or without your consent</li><li>allow someone else to  your computer remotely</li></ul></noscript>
+		<a href="../../../ebooks/art_of_dsp.htm"><img class="right" src="../../../ebooks/graphics/art_of_dsp.png" alt="The Art of DSP - Kindle eBook" title="The Art of DSP - Kindle eBook" height="150" width="150" /></a>
+			  <img alt="Company logo" title="Bores Signal Processing logo" src="../../../graphics/logo.gif" height="100" width="150" />
+			  <h1>Introduction to DSP - filtering: frequency selective process</h1>
+			  <div class="hMenu">
+				  <script type="text/javascript" src="../../../scripts/horizontal_menu.js"></script>
+			  </div>
+			  <table class="main">
+				  <tr>
+					  <td class="menuCell">
+						  <script type="text/javascript" src="../../../scripts/courses_menu.js"></script>
+					  </td>
+					  <td class="mainCell">
+						  <p>Filtering is a process of selecting, or suppressing, certain <a href="../freq/3_ft.htm">frequency components</a> of a signal.</p>
+							<p>A coffee filter allows small particles to pass while trapping the larger grains. A digital filter does a similar thing, but with more subtlety. The digital filter allows to pass certain frequency components of the signal: in this it is similar to the coffee filter, with frequency standing in for particle size. But the digital filter can be more subtle than simply trapping or allowing through: it can attenuate, or suppress, each frequency components by a desired amount. This allows a digital filter to shape the <a href="../freq/3_spect.htm">frequency spectrum</a> of the signal.</p>
+							<p>Filtering is often, though not always, done to suppress noise. It depends on the signal's frequency spectrum being different from that of the noise:</p>
+							<img src="gifs/4_differ.gif" width="256" height="152" title="Viewing a noise signal as a frequency spectrum" alt="Viewing a noise signal as a frequency spectrum" />
+							<p>The diagram shows how how a noisy sine wave viewed as a time domain signal cannot be clearly distinguished from the noise. But when viewed as a frequency spectrum, the sine wave shows as a single clear peak while the noise power is spread over a broad frequency spectrum.</p>
+							<p>By selecting only frequency components that are present in the signal, the noise can be selectively suppressed:</p>
+							<img src="gifs/4_select.gif" width="256" height="173" title="Cleaning up a noise sine wave" alt="Cleaning up a noise sine wave" />
+							<p>The diagram shows how a noisy sine wave may be 'cleaned up' by selecting only a range of frequencies that include signal frequency components but exclude much of the noise:</p>
+							<ul>
+							  <li>the noisy sine wave (shown as a time signal) contains narrow band signal plus broad band noise</li>
+								<li>the frequency spectrumis modified by suppressing a range outside the signal's frequency components</li>
+								<li>the resulting signal (shown in the time domain again) looks much cleaner </li>
+							</ul>
+							<p>
+							  <img class="right" src="../gifs/buttons.jpg" usemap="#map1" width="171" height="18" alt="backward/forward" /> 
+		  			    <map name="map1" id="map1">
+			 			      <area shape="rect" coords="2,3,42,15" href="index.htm" alt="go back to start of module" /><!--go back to start of module -->
+			 			      <area shape="rect" coords="43,2,84,16" href="index.htm" alt="go back to previous page" /><!--go to previous page -->
+			 			      <area shape="rect" coords="84,2,127,15" href="4_spec.htm" alt="go to next page" /><!--go to next page -->
+			 			      <area shape="rect" coords="126,2,169,16" href="../iir/index.htm" alt="go to next module" /><!-- go to next module -->  
+		  			    </map>
+					    </p>
+				    </td>
+			    </tr>
+		    </table>	
+		  </div>
+		  <hr></hr>
+		  <div class="footer">
+				<script type="text/javascript" src="../../../scripts/address_level4.js"></script>
+  		</div>
+		</div>		
+	</body>
+</html>

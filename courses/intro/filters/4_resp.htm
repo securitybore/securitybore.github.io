@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/xhtml-strict.dtd">
+<html> 
+	<head>
+  	<title>Bores Signal Processing - Introduction to DSP - frequency response</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="keywords" content="DSP,signals,digital signal processing,IIR,FIR,digital filters,frequency response,window functions" />
+		<meta name="author" content="Bores Signal Processing" />
+		<meta name="description" content="Training in DSP, software architectures and Philips TriMedia architectures" />
+		<link href="../../../css/global.css" rel="stylesheet" />
+		<script type ="text/javascript">
+			<!--Hide script from old browsers
+			var page = "online_dsp_filters_sec";
+			var section = "index_online_sec_sec";
+			var curr1PageIndex = 1;
+			var curr2PageIndex = 4;
+			var curr3PageIndex = 5;			
+			//end hiding of script -->
+		</script>
+		<!-- validated -->
+	</head>
+  <body>
+	   <div id="outerWrapper">
+		  <div id="innerWrapper">
+				<noscript><p class="declaration">This web site uses Javascript. We use Javascript to improve the user's experience and to enable better maintenance of our site.<br /><br />To be able to view this site properly it is necessary to either <span class="emphasis">enable Javascript</span> or click on <span class="emphasis">allow blocked content</span><br /><br />We promise that we <span class="emphasis">do not:</span></p><ul class="middle"><li>give you content you do not want</li><li>collect any information from your computer</li><li>damage data on your computer</li><li>install software on your computer with or without your consent</li><li>allow someone else to  your computer remotely</li></ul></noscript>
+		<a href="../../../ebooks/art_of_ip.htm"><img class="right" src="../../../ebooks/graphics/art_of_ip.png" alt="The Art of Image Processing - Kindle eBook" title="The Art of Image Processing - Kindle eBook" height="150" width="150" /></a>
+			  <img alt="Company logo" title="Bores Signal Processing logo" src="../../../graphics/logo.gif" height="100" width="150" />
+			  <h1>Introduction to DSP - filtering: frequency response</h1>
+			  <div class="hMenu">
+				  <script type="text/javascript" src="../../../scripts/horizontal_menu.js"></script>
+			  </div>
+			  <table class="main">
+				  <tr>
+					  <td class="menuCell">
+						  <script type="text/javascript" src="../../../scripts/courses_menu.js"></script>
+					  </td>
+					  <td class="mainCell">
+						  <p>Since filtering is a <a href="4_def.htm">frequency selective</a> process, the important thing about a digital filter is its <a href="4_spec.htm">frequency response</a>.</p>
+							<p>The filter's frequency response can be calculated from its <a href="4_eq.htm">filter equation</a>:</p>
+							<img src="gifs/4_resp.gif" width="256" height="102" title="Filter Equation" alt="filter equation" />
+							<p>Where <span class="j">j</span> is the square root of minus one (defined as a number whose sole property is that its square is minus one).</p>
+							<p>The frequency response H(f) is a continuous function, even though the filter equation is a discrete summation.</p>
+							<p>Whilst it is nice to be able to calculate the frequency response given the <a href="4_eq.htm">filter coefficients</a>, when designing a digital filter we want to do the inverse operation: that is, to calculate the filter coefficients having first defined the desired frequency response. So we are faced with an inverse problem.</p>
+							<p>Sadly, there is no general inverse solution to the frequency response equation.</p>
+							<p>To make matters worse, we want to impose an additional constraint on acceptable solutions. Usually, we are designing digital filters with the idea that they will be implemented on some piece of hardware. This means we usually want to design a filter that meets the requirement but which requires the least possible amount of computation: that is, using the smallest number of coefficients. So we are faced with an insoluble inverse problem, on which we wish to impose additional constraints.</p>
+							<p>This is why digital filter design is more an art than a science: the art of finding an acceptable compromise between conflicting constraints.</p>
+							<p class="grey">If we have a powerful computer and time to take a coffee break while the filter calculates, the small number of coefficients may not be important - but this is a pretty sloppy way to work and would be more of an academic exercise than a piece of engineering.</p>
+							<p>
+							  <img class="right" src="../gifs/buttons.jpg" usemap="#map1" width="171" height="18" alt="backward/forward" /> 
+		  			    <map name="map1" id="map1">
+			 			      <area shape="rect" coords="2,3,42,15" href="index.htm" alt="go back to start of module" /><!--go back to start of module -->
+			 			      <area shape="rect" coords="43,2,84,16" href="4_eq.htm" alt="go back to previous page" /><!--go to previous page -->
+			 			      <area shape="rect" coords="84,2,127,15" href="4_fir.htm" alt="go to next page" /><!--go to next page -->
+			 			      <area shape="rect" coords="126,2,169,16" href="../iir/index.htm" alt="go to next module" /><!-- go to next module -->  
+		  			    </map>
+					    </p>
+				    </td>
+			    </tr>
+		    </table>	
+		  </div>
+		  <hr></hr>
+		  <div class="footer">
+				<script type="text/javascript" src="../../../scripts/address_level4.js"></script>
+  		</div>
+		</div>		
+	</body>
+</html>

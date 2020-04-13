@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad Software//DTD HoTMetaL PRO 6.0::19990601::extensions to HTML 4.0//EN" "hmpro6.dtd">
+<HTML> 
+  <HEAD>
+	 <META NAME="KEYWORDS"
+	  CONTENT="DSP online teaching signals digital signal processing time domain cross correlation convolution autocorrelation">
+	 <META NAME="AUTHOR" CONTENT="Bores Signal Processing"><META NAME="DESCRIPTION"
+	 CONTENT="Vendors of DSP hardware, TriMedia based hardware and teaching in both areas">
+	 
+	 <TITLE>Introduction to DSP -Time domain processing: Correlation </TITLE>
+	 <LINK HREF="../../../css/bores_ws.css" REL="stylesheet"><SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript">
+  var heading = "intro_time";	//variable to identify which page you are on
+  var page1 = 0;							//variable to identify where to place arrow in main menu, if that is where you are
+  var page2 = 1;	// variable identifies where to place arrow in submenu, if that is where you are
+  var level = "<a href = ../../../"; // variable to insert placement of link
+		var sub1 = 4; // variable //variable to identify how many menu items above the first submenu
+  var sub2 = 1; // variable to identify which address of link2 to insert
+  var sub3 = 2; //variable to identify which address of link 3 to insert
+  var image = "<IMG SRC=../../../gifs/arrow.gif WIDTH=7 HEIGHT=17 BORDER=0 ALIGN = LEFT>"
+
+	
+	
+	
+	 </SCRIPT> <SCRIPT LANGUAGE="Javascript" TYPE="text/javascript" SRC="../../../scripts/newWindow.js"></SCRIPT>
+  </HEAD> 
+  <BODY>
+	 <IMG SRC="../../../gifs/logo.gif" ALT="BORES logo" ALIGN="MIDDLE" WIDTH="150"
+	  HEIGHT="100" BORDER="0" ID="absLogo1"> 
+	 <DIV ID="absImage5"><A
+		HREF="javascript:newWindow('../../venues/AthensGA.htm', 'venue_htm')"><IMG
+		SRC="../../gifs/next_class.jpg"
+		ALT="click for details of our next class" WIDTH="284" HEIGHT="89"
+		BORDER="0"></A></DIV>
+	 <H1 ID="absTitle1">Introduction to DSP</H1> 
+	 <H2 ID="absTitle2">Time domain processing: Correlation</H2> 
+	 <DIV ID="absNavigation1"><SCRIPT TYPE="text/javascript" SRC="../../../scripts/site_navigation.js"></SCRIPT></DIV> 
+	 <DIV ID="absContent1"> 
+		<P>Correlation is a weighted moving average:</P><IMG
+		SRC="gifs/2_eq_1.gif" WIDTH="256" HEIGHT="43"> 
+		<P>One signal provides the weighting function.</P><IMG
+		SRC="gifs/2_ave.gif" WIDTH="256" HEIGHT="173"> 
+		<P>The diagram shows how a single point of the correlation function is
+		  calculated:</P> 
+		<UL> 
+		  <LI>first, one signal is shifted with respect to the other</LI> 
+		  <LI>the amount of the shift is the position of the correlation function
+			 point to be calculated</LI> 
+		  <LI>each element of one signal is multiplied by the corresponding
+			 element of the other</LI> 
+		  <LI>the area under the resulting curve is integrated</LI> 
+		</UL> 
+		<P>Correlation requires a lot of calculations. If one signal is of length
+		  M and the other is of length N, then we need (N * M) multiplications, to
+		  calculate the whole correlation function.</P> 
+		<P CLASS="grey">Note that really, we want to multiply and then accumulate
+		  the result - this is typical of DSP operations and is called a
+		  'multiply/accumulate' operation. It is the reason that
+		  <A HREF="../chips/6_chips.htm">DSP processors</A> can do multiplications and
+		  additions in parallel.</P> 
+		<P><IMG SRC="../gifs/buttons.jpg" USEMAP="#map1" WIDTH="171" HEIGHT="18"
+		  BORDER="0" ALT="backward/forward" ALIGN="RIGHT"> 
+		  <MAP NAME="map1">
+<!--go back to start of module -->
+			 <AREA SHAPE="RECT" COORDS="2,3,42,15" HREF="index.htm"
+			  ALT="go back to start of module">
+			 <AREA SHAPE="RECT" COORDS="43,2,84,16" HREF="index.htm"
+			  ALT="go back to previous page">
+			 <AREA SHAPE="RECT" COORDS="84,2,127,15" HREF="2_corr.htm"
+			  ALT="go to next page"><!--go to next module -->
+			 <AREA SHAPE="RECT" COORDS="126,2,169,16"
+			  HREF="../freq/index.htm" ALT="go to next module"> 
+		  </MAP> </P><IMG SRC="../gifs/copyrite.jpg" WIDTH="171" HEIGHT="20"
+		ALT="Copyrite:Bores Signal Processing" ALIGN="RIGHT" BORDER="0"> 
+		<DIV ID="relAddress1"><HR WIDTH="800px" ALIGN="LEFT"><SCRIPT TYPE="text/javascript"
+		  SRC="../../../scripts/level4_address.js"></SCRIPT></DIV></DIV> </BODY>
+</HTML>

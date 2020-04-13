@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<!--replace all the **** with relevant data for the page -->
+	<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+	<title>Boring on...  All in the Timing</title>
+	<meta name="author" content="Bores Signal Processing" />
+	<meta name="description" content="Training classes and consultancy for DSP and Image Processing" />
+	<meta name="keywords" content="Bores signal processing,ebooks,VLIW,mpeg,multimedia,filters,FIR,IIR,infinite response filters,dsp,digital signal processing,signals,DirectFB" />	
+  <link href="../css/global.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript">
+	<!--Hide script from old browsers
+		var section = "blog";
+		var currPageIndex = 3;
+		var eBook = "eBookIndex";
+	//end hiding of script -->
+	</script>
+	<script type ="text/javascript" src="../scripts/newWindow.js"></script>
+</head>
+<body>
+	<div id="outerWrapper">
+		<div id="innerWrapper">
+			<noscript><p class="declaration">This web site uses Javascript. We use Javascript to improve the user's experience and to enable better maintenance of our site.<br /><br />To be able to view this site properly it is necessary to either <span class="emphasis">enable Javascript</span> or click on <span class="emphasis">allow blocked content</span><br /><br />We promise that we <span class="emphasis">do not:</span></p><ul class="middle"><li>give you content you do not want</li><li>collect any information from your computer</li><li>damage data on your computer</li><li>install software on your computer with or without your consent</li><li>allow someone else to  your computer remotely</li></ul></noscript>
+			<a href="../ebooks/dsp_without_math.htm"><img class="right" src="../ebooks/graphics/dsp_without_math.png" alt="eBook now available" title="eBook now available" height="150" width="150" /></a>
+			<img alt="Company logo" title="Bores Signal Processing logo" src="../graphics/logo.gif" height="100" width="150" />				
+			<h1>Boring on...</h1>
+			<div class="hMenu">
+				<script type="text/javascript" src="../scripts/horizontal_menu.js"></script>
+			</div>
+			<table class="main">
+				<tr>
+					<td class="menuCell">
+						<script type="text/javascript" src="../scripts/blog_menu.js"></script>
+					</td>
+					<td class="mainCell">
+					<h1>It's all in the timing</h1>
+  <p>It is common for DSP systems to be designed a bit poorly in terms of the balance between ADC accuracy and clock accuracy. I think this is because many designers do not realise that the two are linked: error in the clock timing leads to errors in the sampled signal.</p>
+			<p><img alt="Timing error" title="Timing error" src="graphics/Timing_error_in_signal_sampling.jpg" height="300" width="400" /></p>			
+			<p>The diagram shows an analog signal which is held on the rising edge of a clock signal. If the clock edge occurs at a different time than expected, the signal will be held at the wrong value. In the diagram, the signal is rising and so the held value is higher than it should be.</p>
+			<p>Errors introduced by timing jitter are as important as those caused by quantization, but are often forgotten. It is sadly common to see DSP systems where a lot of care has gone into the analog design and the selection of analog-to-digital converters with high precision and accuracy, but where the design is let down by a poor quality clock. A good design would balance the choice of clock accuracy against the ADC, and the fastest changing signals that are of interest. This becomes more important as we sample signals close to their Nyquist frequency.</p>
+			<p>Errors due to timing jitter depend on the rate of change of the signal (quantization errors depend on the instantaneous value of the signal). Sadly, these errors – like quantization errors – are both non linear and signal dependent, so are intractable to calculate. They can however be simulated, or estimated using simplified models.</p>
+						</td>
+				</tr>
+			</table>
+		</div>
+		<hr></hr>
+		<div class="footer">
+			<script type="text/javascript" src="../scripts/address_level1.js"></script>
+  	</div>
+	</div>
+</body>
+</html>

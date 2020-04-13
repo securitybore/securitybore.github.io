@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/xhtml-strict.dtd">
+<html>
+	<head>
+		<title>Bores Signal Processing - Advanced DSP - FFT windows: figures of merit</title>
+		<!-- validated xhtml -->
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="keywords" content="Bores signal processing, training, DSP, FIR, IIR, filters, Fast Fourier Transforms, FFT, VLIW, aliasing, impulse response, windows, matched filters" />
+		<meta name="author" content="Bores Signal Processing" />
+		<meta name="description" content="Training in DSP, software architectures and Philips TriMedia architectures" />
+		<link href="../../../css/global.css" rel="stylesheet" />
+		<script type ="text/javascript">
+			<!--Hide script from old browsers
+			//intro to dsp index
+			var page = "online_advanced_windows_sec";
+			var section = "index_online_sec_sec";
+			var curr1PageIndex = 2;
+			var curr2PageIndex = 1;
+			var curr3PageIndex = 8;
+			//end hiding of script -->
+		</script>
+	</head>
+	<body>
+		<div id="outerWrapper">
+			<div id="innerWrapper">
+				<noscript><p class="declaration">This web site uses Javascript. We use Javascript to improve the user's experience and to enable better maintenance of our site.<br /><br />To be able to view this site properly it is necessary to either <span class="emphasis">enable Javascript</span> or click on <span class="emphasis">allow blocked content</span><br /><br />We promise that we <span class="emphasis">do not:</span></p><ul class="middle"><li>give you content you do not want</li><li>collect any information from your computer</li><li>damage data on your computer</li><li>install software on your computer with or without your consent</li><li>allow someone else to  your computer remotely</li></ul></noscript>
+				<img class="right" src="../../../graphics/composite_training_banner.jpg" alt="We offer training classes and eBooks on DSP, and in Media Processing (TriMedia)" title="We offer training classes and eBooks on DSP, and in Media Processing (TriMedia)" height="99" width="300" />
+				<img alt="Company logo" title="Bores Signal Processing logo" src="../../../graphics/logo.gif" height="100" width="150" />			
+				<h1>Advanced DSP - FFT windows: figures of merit</h1> 
+				<div class="hMenu">
+					<script type="text/javascript" src="../../../scripts/horizontal_menu.js"></script>
+				</div>
+				<table class="main">
+					<tr>
+						<td class="menuCell">
+							<script type="text/javascript" src="../../../scripts/courses_menu.js"></script>
+						</td>
+						<td class="mainCell">
+							<p>The measures of the quality of an FFT <a href="../../intro/freq/3_window.htm">window function</a> are:</p> 
+							<ul> 
+		  					<li><a href="10_resol.htm">Sidelobe level</a>- the attenuation to the top of the highest sidelobe</li> 
+		  					<li><a href="10_resol.htm">Fall off</a> - the rate of fall off to the side lobe </li> 
+		  					<li><a href="10_resol.htm">6 dB bandwidth</a> - the bandwidth in which the window function's <a href="10_kern.htm">kernel</a> falls by 6 dB</li> 
+		  					<li><a href="10_cpg.htm">Coherent Power Gain</a> - the normalised DC gain</li> 
+		  					<li><a href="10_enb.htm">Equivalent Noise Bandwidth</a>- the bandwidth of an ideal rectangular <a href="../../intro/filters/4_def.htm">filter</a> which would accumulate the same noise power from white noise as the window function's kernel with the same peak power gain</li> 
+		  					<li><a href="10_pl.htm">Worst Case Processing Loss</a> - the ratio of input signal-to-noise to output signal-to-noise, including <a href="10_pl.htm">scalloping loss</a> for the worst case</li> 
+							</ul> 
+							<p>Sidelobe level, fall offand 6 dB bandwidth measure a window function's quality in terms of resolving close <a href="../../intro/freq/3_spect.htm">frequency components</a>.</p> 
+							<p>Coherent Power Gainmeasures the amount by which a frequency component's measured value is attenuated by the window function</p> 
+							<p>Equivalent Noise Bandwidth and Worst Case Processing Loss measure a window function's quality in terms of detecting a signal in noise.</p> 
+							<table class="info"> 
+		  					<tr> 
+			 						<td class="infoCell"> Window function </td> 
+			 						<td class="infoCell"> Sidelobe (dB) </td> 
+			 						<td class="infoCell"> Fall off (dB/octave) </td> 
+			 						<td class="infoCell"> Coherent Power Gain </td> 
+			 						<td class="infoCell"> Equivalent Noise Bandwidth (FFT bins) </td> 
+			 						<td class="infoCell"> 6 dB bandwidth (FFT bins) </td> 
+			 						<td class="infoCell"> Worst Case Processing Loss (dB) </td> 
+		  					</tr> 
+		  					<tr> 
+			 						<td class="infoCell"> Rectangular </td> 
+			 						<td class="infoCell"> - 13 </td> 
+			 						<td class="infoCell"> - 6 </td> 
+			 						<td class="infoCell"> 1.00 </td> 
+			 						<td class="infoCell"> 1.00 </td> 
+			 						<td class="infoCell"> 1.21 </td> 
+			 						<td class="infoCell"> 3.92 </td> 
+		  					</tr> 
+		  					<tr> 
+			 						<td class="infoCell"> Triangular </td> 
+			 						<td class="infoCell"> - 27 </td> 
+			 						<td class="infoCell"> - 12 </td> 
+			 						<td class="infoCell"> 0.50 </td> 
+			 						<td class="infoCell"> 1.33 </td> 
+			 						<td class="infoCell"> 1.78 </td> 
+			 						<td class="infoCell"> 3.07 </td> 
+		  					</tr> 
+		  					<tr> 
+			 						<td class="infoCell"> Hanning </td> 
+			 						<td class="infoCell"> -32 </td> 
+			 						<td class="infoCell"> -18 </td> 
+			 						<td class="infoCell"> 0.50 </td> 
+			 						<td class="infoCell"> 1.50 </td> 
+			 						<td class="infoCell"> 2.00 </td> 
+			 						<td class="infoCell"> 3.18 </td> 
+		  					</tr> 
+		  					<tr> 
+			 						<td class="infoCell"> Hamming </td> 
+			 						<td class="infoCell"> - 43 </td> 
+			 						<td class="infoCell"> - 6 </td> 
+			 						<td class="infoCell"> 0.54 </td> 
+			 						<td class="infoCell"> 1.36 </td> 
+			 						<td class="infoCell"> 1.81 </td> 
+			 						<td class="infoCell"> 3.10 </td> 
+		  					</tr> 
+		  					<tr> 
+			 						<td class="infoCell"> Poisson (3.0) </td> 
+			 						<td class="infoCell"> - 24 </td> 
+			 						<td class="infoCell"> - 6 </td> 
+			 						<td class="infoCell"> 0.32 </td> 
+			 						<td class="infoCell"> 1.65 </td> 
+			 						<td class="infoCell"> 2.08 </td> 
+			 						<td class="infoCell"> 3.64 </td> 
+		  					</tr> 
+		  					<tr> 
+			 						<td class="infoCell"> Poisson (4.0) </td> 
+			 						<td class="infoCell"> - 31 </td> 
+			 						<td class="infoCell"> - 6 </td> 
+			 						<td class="infoCell"> 0.25 </td> 
+			 						<td class="infoCell"> 2.08 </td> 
+			 						<td class="infoCell"> 2.58 </td> 
+			 						<td class="infoCell"> 4.21 </td> 
+		  					</tr> 
+		  					<tr> 
+			 						<td class="infoCell"> Cauchy (4.0) </td> 
+			 						<td class="infoCell"> - 35 </td> 
+			 						<td class="infoCell"> - 6 </td> 
+			 						<td class="infoCell"> 0.33 </td> 
+			 						<td class="infoCell"> 1.76 </td> 
+			 						<td class="infoCell"> 2.20 </td> 
+			 						<td class="infoCell"> 3.83 </td> 
+		  					</tr> 
+		  					<tr> 
+			 						<td class="infoCell"> Cauchy (5.0) </td> 
+			 						<td class="infoCell"> - 30 </td> 
+			 						<td class="infoCell"> - 6 </td> 
+			 						<td class="infoCell"> 0.28 </td> 
+			 						<td class="infoCell"> 2.06 </td> 
+			 						<td class="infoCell"> 2.53 </td> 
+			 						<td class="infoCell"> 4.28 </td> 
+		  					</tr> 
+		  					<tr> 
+			 						<td class="infoCell"> Gaussian (3.0) </td> 
+			 						<td class="infoCell"> - 55 </td> 
+			 						<td class="infoCell"> - 6 </td> 
+			 						<td class="infoCell"> 0.43 </td> 
+			 						<td class="infoCell"> 1.64 </td> 
+			 						<td class="infoCell"> 2.18 </td> 
+			 						<td class="infoCell"> 3.40 </td> 
+		  					</tr> 
+		  					<tr> 
+			 						<td class="infoCell"> Kaiser-Bessel (3.0) </td> 
+			 						<td class="infoCell"> - 69 </td> 
+			 						<td class="infoCell"> - 6 </td> 
+			 						<td class="infoCell"> 0.40 </td> 
+			 						<td class="infoCell"> 1.80 </td> 
+			 						<td class="infoCell"> 2.39 </td> 
+			 						<td class="infoCell"> 3.56 </td> 
+		  					</tr> 
+		  					<tr> 
+			 						<td class="infoCell"> Kaiser-Bessel (3.5) </td> 
+			 						<td class="infoCell"> - 82 </td> 
+			 						<td class="infoCell"> - 6 </td> 
+			 						<td class="infoCell"> 0.37 </td> 
+			 						<td class="infoCell"> 1.93 </td> 
+			 						<td class="infoCell"> 2.57 </td> 
+			 						<td class="infoCell"> 3.74 </td> 
+		  					</tr> 
+							</table> 
+							<p>You can download a copy of this technical note in <a href="http://www.adobe.com/prodindex/acrobat/readstep.html">Adobe Acrobat</a> format:</p> 
+							<ul> 
+		  					<li><a href="files/windows.pdf">FFT windows technical note</a></li> 
+							</ul> 
+							<p>
+								<img class="right" src="../../gifs/buttons.jpg" usemap="#map1" width="171" height="18" title="Forward reverse buttons" alt="click to move backward/forward" /> 
+		          		<map name="map1" id="map1">
+			          		<area shape="rect" coords="2,3,42,15" href="index.htm" alt="go back to start of module" /><!--go back to start of module -->
+			          		<area shape="rect" coords="43,2,84,16" href="10_resol.htm" alt="go back to previous page" /><!--go back to previous page -->
+			          		<area shape="rect" coords="84,2,127,15" href="../index.htm" alt="go to next page" /><!--go to next page -->
+			          		<area shape="rect" coords="126,2,169,16" href="../index.htm" alt="go to end of module" /><!--go to next module -->  
+		          		</map>
+									<img class="right" src="../../gifs/copyrite.jpg" width="171" height="20"	alt="Copyrite:Bores Signal Processing" /> <br /><br /><br /><br />
+		        		</p>
+		      		</td>
+			  		</tr>
+					</table>	
+				</div>
+				<hr></hr>
+				<div class="footer">
+					<script type="text/javascript" src="../../../scripts/address_level4.js"></script>
+  			</div>
+			</div>		
+		</body>
+</html>

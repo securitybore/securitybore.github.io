@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/xhtml-strict.dtd">
+<html> 
+	<head>
+  	<title>Bores Signal Processing - Introduction to DSP - frequency analysis: frequency leakage</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="keywords" content="Bores signal processing,training,DSP,FIR,IIR,filters,Fast Fourier Transforms,FFT,frequency, wavelets" />
+		<meta name="author" content="Bores Signal Processing" />
+		<meta name="description" content="Training in DSP, software architectures and Philips TriMedia architectures" />
+		<link href="../../../css/global.css" rel="stylesheet" />
+		<script type ="text/javascript">
+			<!--Hide script from old browsers
+			var page = "online_dsp_freq_sec";
+			var section = "index_online_sec_sec";
+			var curr1PageIndex = 1;
+			var curr2PageIndex = 3;
+			var curr3PageIndex = 10;			
+			//end hiding of script -->
+		</script>
+		<!-- validated -->
+	</head>
+  <body>
+	  <div id="outerWrapper">
+		  <div id="innerWrapper">
+				<noscript><p class="declaration">This web site uses Javascript. We use Javascript to improve the user's experience and to enable better maintenance of our site.<br /><br />To be able to view this site properly it is necessary to either <span class="emphasis">enable Javascript</span> or click on <span class="emphasis">allow blocked content</span><br /><br />We promise that we <span class="emphasis">do not:</span></p><ul class="middle"><li>give you content you do not want</li><li>collect any information from your computer</li><li>damage data on your computer</li><li>install software on your computer with or without your consent</li><li>allow someone else to  your computer remotely</li></ul></noscript>
+		<a href="../../../ebooks/art_of_dsp.htm"><img class="right" src="../../../ebooks/graphics/art_of_dsp.png" alt="The Art of DSP - Kindle eBook" title="The Art of DSP - Kindle eBook" height="150" width="150" /></a>
+			  <img alt="Company logo" title="Bores Signal Processing logo" src="../../../graphics/logo.gif" height="100" width="150" />
+			  <h1>Introduction to DSP - frequency: frequency leakage II</h1>
+			  <div class="hMenu">
+				  <script type="text/javascript" src="../../../scripts/horizontal_menu.js"></script>
+			  </div>
+			  <table class="main">
+				  <tr>
+					  <td class="menuCell">
+						  <script type="text/javascript" src="../../../scripts/courses_menu.js"></script>
+					  </td>
+					  <td class="mainCell">
+						<p>If we only <a href="../basics/1_conver.htm">measure</a> the signal for a short time, the <a href="3_ft.htm">Fourier Transform</a> works as is the data were periodic for all time.</p>
+						<p>If the signal is periodic, two case arise:</p>
+						<ul>
+						  <li>If an integral number of cycles fit into the total duration of the measurement, then when the Fourier Transform assumes the signal repeats, the end of one signal segment connects smoothly with the beginning of the next - and the assumed signal happens to be exactly the same as the actual signal.</li>
+							<li>If not quite an integral number of cycles fit into the total duration of the measurement, then when the Fourier Transform assumes the signal repeats, the end of one signal segment does not connect smoothly with the beginning of the next - the assumed signal is similar to the actual signal, but has little 'glitches' at regular intervals.</li>
+						</ul>
+						<p>There is a direct relation between a signal's duration in time and the width of its frequency spectrum:</p>
+						<ul>
+						  <li>short signals have broad frequency spectra</li>
+							<li>long signals have narrow <a href="3_spect.htm">frequency spectra</a></li>
+						</ul>
+						<img src="gifs/3_length.gif" width="256" height="146" title="Relationship between a signals duration and the width of its frequency spectra" alt="Relationship between a signals duration and the width of its frequency spectra" />
+						<p>The 'glitches' are short signals. So they have a broad frequency spectrum. And this broadening is superimposed on the frequency spectrum of the actual signal:</p>
+						<img src="gifs/3_leak.gif" width="512" height="288" title="Period fitting the time" alt="Period fitting the time" />
+						<ul>
+						  <li>if the period exactly fits the measurement time, the frequency spectrum is correct</li>
+							<li>if the period does not match the measurement time, the frequency spectrum is incorrect - it is broadened</li>
+						</ul>
+						<p>This broadening of the frequency spectrum determines the <a href="../basics/1_resol.htm">frequency resolution</a> - the ability to resolve (that is, to distinguish between) two adjacent frequency components.</p>
+						<p>Only the one happy circumstance where the signal is such that an integral number of cycles exactly fit into the measurement time gives the expected frequency spectrum. In all other cases the frequency spectrum is broadened by the 'glitches' at the ends. Matters are made worse because the size of the glitch depends on when the first measurement occurred in the cycle - so the broadening will change if the measurement is repeated.</p>
+						<p class="grey">For example a sine wave 'should' have a frequency spectrum which consists of one single line. But in practice, if measured say by a spectrum analyser, the frequency spectrum will be a broad line - with the sides flapping up and down like Batman's cloak. When we see a perfect single line spectrum - for example in the charts sometimes provided with analogue to digital converter chips - this has in fact been obtained by tuning the signal frequency carefully so that the period exactly fits the measurement time and the frequency spectrum is the best obtainable.</p>
+						<p>
+						  <img class="right" src="../gifs/buttons.jpg" usemap="#map1" width="171" height="18" alt="backward/forward" /> 
+		  			     <map name="map1" id="map1">
+			 			       <area shape="rect" coords="2,3,42,15" href="index.htm" alt="go back to start of module" /><!--go back to start of module -->
+			 			       <area shape="rect" coords="43,2,84,16" href="3_length.htm" alt="go back to previous page" /><!--go to previous page -->
+			 			       <area shape="rect" coords="84,2,127,15" href="3_window.htm" alt="go to next page" /><!--go to next page -->
+			 			       <area shape="rect" coords="126,2,169,16" href="../filters/index.htm" alt="go to next module" />  
+		  			     </map>
+					     </p>
+				      </td>
+			      </tr>
+		      </table>	
+		    </div>
+		    <hr></hr>
+		    <div class="footer">
+				  <script type="text/javascript" src="../../../scripts/address_level4.js"></script>
+  		  </div>
+		 </div>		
+	</body>
+</html>

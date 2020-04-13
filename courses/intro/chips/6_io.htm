@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/xhtml-strict.dtd">
+<html> 
+	<head>
+  	<title>Bores Signal Processing - Introduction to DSP - input and output interfaces</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="keywords" content="DSP online teaching signals digital signal processing IIR FIR filters frequency response window functions" />
+		<meta name="author" content="Bores Signal Processing" />
+		<meta name="description" content="Training in DSP, software architectures and Philips TriMedia architectures" />
+		<link href="../../../css/global.css" rel="stylesheet" />
+		<script type ="text/javascript">
+			<!--Hide script from old browsers
+			var page = "online_dsp_chips_sec"; // for courses_menu
+			var section = "index_online_sec_sec";  //for horizontal menu
+			var curr1PageIndex = 1;  //level1 of the menu
+			var curr2PageIndex = 6;	//level2 of the menu
+			var curr3PageIndex = 4;	//level3 of the menu		
+			//end hiding of script -->
+		</script>
+		<!-- validated -->
+	</head>
+  <body>
+	   <div id="outerWrapper">
+		  <div id="innerWrapper">
+				<noscript><p class="declaration">This web site uses Javascript. We use Javascript to improve the user's experience and to enable better maintenance of our site.<br /><br />To be able to view this site properly it is necessary to either <span class="emphasis">enable Javascript</span> or click on <span class="emphasis">allow blocked content</span><br /><br />We promise that we <span class="emphasis">do not:</span></p><ul class="middle"><li>give you content you do not want</li><li>collect any information from your computer</li><li>damage data on your computer</li><li>install software on your computer with or without your consent</li><li>allow someone else to  your computer remotely</li></ul></noscript>
+			  <img class="right" src="../../../graphics/composite_training_banner.jpg" alt="We offer training classes and eBooks on DSP, and in Media Processing (TriMedia)" title="We offer training classes and eBooks on DSP, and in Media Processing (TriMedia)" height="99" width="300" />
+			  <img alt="Company logo" title="Bores Signal Processing logo" src="../../../graphics/logo.gif" height="100" width="150" />
+			  <h1>Introduction to DSP - DSP processors: input and output interfaces</h1>
+			  <div class="hMenu">
+				  <script type="text/javascript" src="../../../scripts/horizontal_menu.js"></script>
+			  </div>
+			  <table class="main">
+				  <tr>
+					  <td class="menuCell">
+						  <script type="text/javascript" src="../../../scripts/courses_menu.js"></script>
+					  </td>
+					  <td class="mainCell"> 
+							<p>In a typical DSP application, the processor will have to deal with multiple sources of data from the real world. In each case, the processor may have to be able to receive and transmit data in real time, without interrupting its internal mathematical operations. There are three sources of data from the real world:</p> 
+						<ul> 
+		  				<li>signals coming in and going out</li> 
+		  				<li>communication with an overall system controller of a different type</li> 
+		  				<li>communication with other DSP processors of the same type</li> 
+						</ul> 
+						<p>The need to deal with different sources of data efficiently and in real time leads to special communication features on DSP processors: </p> 
+						<p><img src="gifs/6_sport.gif" width="52" height="50" title="Serial port" alt="serial port" /><span class="red">Signals</span> tend to be fairly continuous, but at audio rates or not much higher. They are usually handled by high speed synchronous serial ports. Serial ports are inexpensive - having only two or three wires - and are well suited to audio or telecommunications data rates up to 10 Mbit/s. Most modern speech and audio <a href="../basics/1_conver.htm">analogue to digital converters</a> interface to DSP serial ports with no intervening logic. A synchronous serial port requires only three wires: clock, data, and word sync. The addition of a fourth wire (frame sync) and a high impedance state when not transmitting makes the port capable of Time Division Multiplex (TDM) data handling, which is ideal for telecommunications:</p>
+						<img src="gifs/6_serial.gif" width="512" height="136" title="Synchronisation" alt="Synchronisation" /> 
+						<p>DSP processors usually have synchronous serial ports - transmitting clock and data separately - although some, such as the Motorola DSP56000 family, have asynchronous serial ports as well (where the clock is recovered from the data). Timing is versatile, with options to generate the serial clock from the DSP chip clock or from an external source. The serial ports may also be able to support separate clocks for receive and transmit - a useful feature, for example, in satellite modems where the clocks are affected by Doppler shifts. Most DSP processors also support companding to A-law or mu-law in serial port hardware with no overhead - the Analog Devices ADSP2181 and the Motorola DSP56000 family do this in the serial port, whereas the Lucent DSP32C has a hardware compander in its <a href="6_data.htm">data path</a> instead.</p>
+						<p>The serial port will usually operate under DMA - data presented at the port is automatically written into DSP memory without stopping the DSP - with or without interrupts. It is usually possible to receive and trasmit data simultaneously.</p> 
+						<p>The serial port has dedicated instructions which make it simple to handle. Because it is standard to the chip, this means that many types of actual I/O hardware can be supported with little or no change to code - the DSP program simply deals with the serial port, no matter to what I/O hardware this is attached.</p> 
+						<p><img src="gifs/6_hport.gif" width="52" height="50" title="Host port" alt="Host port" /><span class="red">Host communications</span> is an element of many, though not all, DSP systems. Many systems will have another, general purpose, processor to supervise the DSP: for example, the DSP might be on a PC plug-in card or a VME card - simpler systems might have a microcontroller to perform a 'watchdog' function or to initialise the DSP on power up. Whereas signals tend to be continuous, host communication tends to require data transfer in batches - for instance to download a new program or to update <a href="../filters/4_eq.htm">filter coefficients</a>. Some DSP processors have dedicated <a href="6_io.htm">host ports</a> which are designed to communicate with another processor of a different type, or with a standard bus. For instance the Lucent DSP32C has a host port which is effectively an 8 bit or 16 bit ISA bus: the Motorola DSP56301 and the Analog Devices ADSP21060 have host ports which implement the PCI bus.</p> 
+						<p>The host port will usually operate under DMA - data presented at the port is automatically written into DSP memory without stopping the DSP - with or without interrupts. It is usually possible to receive and trasmit data simultaneously.</p> 
+						<p>The host port has dedicated instructions which make it simple to handle. The host port imposes a welcome element of standardisation to plug-in DSP boards - because it is standard to the chip, it is relatively difficult for individual designers to make the bus interface different. For example, of the 22 main different manufacturers of PC plug-in cards using the Lucent DSP32C, 21 are supported by the same PC interface code: this means it is possible to swap between different cards for different purposes, or to change to a cheaper manufacturer, without changing the PC side of the code. Of course this is not foolproof - some engineers will always 'improve upon' a standard by making something incompatible if they can - but at least it limits unwanted creativity.</p> 
+						<p><img src="gifs/6_lport.gif" width="52" height="50" title="Interprocessor port" alt="Interprocessor port" /><span class="red">Interprocessor communications</span> is needed when a DSP application is too much for a single processor - or where many processors are needed to handle multiple but connected data streams. Link ports provide a simple means to connect several DSP processors of the same type. The Texas TMS320C40 and the Analog Devices ADSP21060 both have six link ports (called 'comm ports' for the 'C40). These would ideally be parallel ports at the word length of the processor, but this would use up too many pins (six ports each 32 bits wide=192, which is a lot of pins even if we neglect grounds). So a hybrid called serial/parallel is used: in the 'C40, comm ports are 8 bits wide and it takes four transfers to move one 32 bit word - in the 21060, link ports are 4 bits wide and it takes 8 transfers to move one 32 bit word.</p> 
+						<p>The link port will usually operate under DMA - data presented at the port is automatically written into DSP memory without stopping the DSP - with or without interrupts. It is usually possible to receive and trasmit data simultaneously. This is a lot of data movement - for example the Texas TMS320C40 could in principle use all its six comm ports at their full rate of 20 Mbyte/s to achieve data transfer rates of 120 Mbyte/s. In practice, of course, such rates exist only in the dreams of marketing men since other factors such as internal bus bandwidth come into play.</p> 
+						<p>The link ports have dedicated instructions which make them simple to handle. Although they are sometimes used for signal I/O, this is not always a good idea since it involves very high speed signals over many pins and it can be hard for external hardware to exactly meet the timing requirements.</p> 
+						<p>
+							<img class="right" src="../gifs/buttons.jpg" usemap="#map1" width="171" height="18" alt="backward/forward" /> 
+		  			    <map name="map1" id="map1">
+			 			      <area shape="rect" coords="2,3,42,15" href="index.htm" alt="go back to start of module" /><!--go back to start of module -->
+			 			      <area shape="rect" coords="43,2,84,16" href="6_world.htm" alt="go back to previous page" /><!--go to previous page -->
+			 			      <area shape="rect" coords="84,2,127,15" href="6_mem.htm" alt="go to next page" /><!--go to next page -->
+			 			      <area shape="rect" coords="126,2,169,16" href="../program/index.htm" alt="go to next module" /><!-- go to next module -->  
+		  			    </map>
+					    </p>
+				    </td>
+			    </tr>
+		    </table>	
+		  </div>
+		  <hr></hr>
+		  <div class="footer">
+				<script type="text/javascript" src="../../../scripts/address_level4.js"></script>
+  		</div>
+		</div>		
+	</body>
+</html>

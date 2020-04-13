@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/xhtml-strict.dtd">
+<html> 
+	<head>
+  	<title>Bores Signal Processing - Introduction to DSP - Filtering: design by equiripple method</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="keywords" content="DSP,signals,digital signal processing,IIR,FIR,digital filters,frequency response,window functions" />
+		<meta name="author" content="Bores Signal Processing" />
+		<meta name="description" content="Training in DSP, software architectures and Philips TriMedia architectures" />
+		<link href="../../../css/global.css" rel="stylesheet" />
+		<script type ="text/javascript">
+			<!--Hide script from old browsers
+			var page = "online_dsp_filters_sec";
+			var section = "index_online_sec_sec";
+			var curr1PageIndex = 1;
+			var curr2PageIndex = 4;
+			var curr3PageIndex = 10;			
+			//end hiding of script -->
+		</script>
+		<!-- validated -->
+	</head>
+  <body>
+	   <div id="outerWrapper">
+		  <div id="innerWrapper">
+				<noscript><p class="declaration">This web site uses Javascript. We use Javascript to improve the user's experience and to enable better maintenance of our site.<br /><br />To be able to view this site properly it is necessary to either <span class="emphasis">enable Javascript</span> or click on <span class="emphasis">allow blocked content</span><br /><br />We promise that we <span class="emphasis">do not:</span></p><ul class="middle"><li>give you content you do not want</li><li>collect any information from your computer</li><li>damage data on your computer</li><li>install software on your computer with or without your consent</li><li>allow someone else to  your computer remotely</li></ul></noscript>
+		<a href="../../../ebooks/art_of_ip.htm"><img class="right" src="../../../ebooks/graphics/art_of_ip.png" alt="The Art of Image Processing - Kindle eBook" title="The Art of Image Processing - Kindle eBook" height="150" width="150" /></a>
+			  <img alt="Company logo" title="Bores Signal Processing logo" src="../../../graphics/logo.gif" height="100" width="150" />
+			  <h1>Introduction to DSP - filtering: design by equiripple method</h1>
+			  <div class="hMenu">
+				  <script type="text/javascript" src="../../../scripts/horizontal_menu.js"></script>
+			  </div>
+			  <table class="main">
+				  <tr>
+					  <td class="menuCell">
+						  <script type="text/javascript" src="../../../scripts/courses_menu.js"></script>
+					  </td>
+					  <td class="mainCell">
+						  <p>FIR <a href="4_eq.htm">filter coefficients</a> can be calculated using the <a href="4_window.htm">window method</a>.</p>
+								<p>But the window methoddoes not correspond to any known form of optimisation. In fact it can be shown that the window method is not optimal - by which we mean, it does not produce the lowest possible number of <a href="4_eq.htm">filter coefficients</a> that just meets the requirement.</p>
+								<p>The art of <a href="4_fir.htm">FIR filter</a> design by the window method lies in choosing the <a href="../freq/3_window.htm">window function</a> which meets your requirement with the minimum number of filter coefficients.</p>
+								<p>If the window method design is not good enough we have two choices:</p>
+								<ul>
+									<li>use another window function and try again</li>
+									<li>do something clever</li>
+								</ul>
+								<p><span class="red">Remez Exchange algorithm</span> is something clever. It uses a mathematical optimisation method.</p>
+								<p>The following explanation is not mathematically correct, but since we are trying to get an idea of what is going on, and not trying to duplicate the thinking of geniuses, it is worth going through anyway.</p>
+								<p>Using the window method to design a filter we might proceed manually as follows:</p>
+								<ul>
+									<li>choose a window function that we think will do</li>
+									<li>calculate the filter coefficients</li>
+									<li>check the actual filter's <a href="4_resp.htm">frequency response</a> against the design goal</li>
+									<li>if it overperforms, reduce the number of filter coefficients or relax the window function design</li>
+									<li>try again until we find the filter with the lowest number of filter coefficients possible</li>
+								</ul>
+								<p>In a way, this is what the Remez Exchange algorithm does automatically. It iterates between the filter coefficients and the actual frequency response until it finds the filter that just meets the <a href="4_spec.htm">specification</a> with the lowest possible number of filter coefficients. Actually, the Remez Exchange algorithm never really calculates the frequency response: but it does keep comparing the actual with the design goal.</p>
+								<p>Remez was a Russian. Two Americans - Parks and McLellan - wrote a FORTRAN program to implement the Remez algorithm. So this type of filter designi s often called a <span class="red">Parks McLellan filter</span> design.</p>
+								<p>The Remez/Parks McLellan method produces a filter which just meets the specification without overperforming. Many of the window method designs actually perform better as you move further away from the <a href="4_spec.htm">passband</a>: this is wasted performance, and means they are using more filter coefficients than they need. Similarly, many of the window method designs actually perform better than the specification within the passband: this is also wasted performance, and means they are using more filter coefficients than they need. The Remez/Parks McLellan method performs just as well as the specification but no better: one might say it produces the worst possible design that just meets the specification at the lowest possible cost - almost a definition of practical engineering. So Remez/Parks McLellan designs have equal ripple - up to the specification but no more - in both passband and <a href="4_spec.htm">stopband</a>. This is why they are often called <span class="red">equiripple</span> designs.</p>
+								<img src="gifs/4_equi.gif" width="256" height="106" title="Equiripple filter" alt="equipripple filter" />
+								<p>The <span class="red">equiripple</span> design produces the most efficient filters - that is, filters that just meet the specification with the least number of coefficients. But there are reasons why they might not be used in all cases:</p>
+								<ul>
+									<li>a particular filter shape may be desired, hence a choice of a particular window function</li>
+									<li><span class="red">equiripple</span> is very time consuming - a design that takes a few seconds to complete using the window method can easily take ten or twenty minutes with the <span class="red">equiripple</span> method</li>
+									<li>the window method is very simple and easy to include in a program - for example, where one had to calculate a new filter according to some dynamically changing parameters</li>
+									<li>there is no guarantee that the <span class="red">Remez Exchange algorithm</span> will converge - it may converge to a false result (hence <span class="red">equiripple</span> designs should always be checked): or it may not converge ever (resulting in hung computers, divide by zero errors and all sorts of other horrors)</li>
+								</ul>
+								<p>We hope you have found this course module to be helpful. Please <a href="mailto: chris@bores.com">contact us</a> with your comments or suggestions.</p>
+								<p>
+									<img class="right" src="../gifs/buttons.jpg" usemap="#map1" width="171" height="18" alt="backward/forward" /> 
+		  			      <map name="map1" id="map1">
+			 			        <area shape="rect" coords="2,3,42,15" href="index.htm" alt="go back to start of module" /><!--go back to start of module -->
+			 			        <area shape="rect" coords="43,2,84,16" href="4_trunc.htm" alt="go back to previous page" /><!--go to previous page -->
+			 			        <area shape="rect" coords="84,2,127,15" href="4_equi.htm" alt="go to next page" /><!--go to next page -->
+			 			        <area shape="rect" coords="126,2,169,16" href="../iir/index.htm" alt="go to next module" /><!-- go to next module -->  
+		  			      </map>
+					      </p>
+				      </td>
+			      </tr>
+		      </table>	
+		    </div>
+		    <hr></hr>
+		    <div class="footer">
+				  <script type="text/javascript" src="../../../scripts/address_level4.js"></script>
+  		  </div>
+		  </div>		
+	  </body>
+</html>

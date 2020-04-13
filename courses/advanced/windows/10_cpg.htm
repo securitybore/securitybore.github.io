@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/xhtml-strict.dtd">
+<html>
+	<head>
+		<title>Bores Signal Processing - Advanced DSP - FFT windows: coherant power gain</title>
+		<!-- validated xhtml -->
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="keywords" content="Bores signal processing, training, DSP, FIR, IIR, filters, Fast Fourier Transforms, FFT, VLIW, aliasing, impulse response, windows, matched filters" />
+		<meta name="author" content="Bores Signal Processing" />
+		<meta name="description" content="Training in DSP, software architectures and Philips TriMedia architectures" />
+		<link href="../../../css/global.css" rel="stylesheet" />
+		<script type ="text/javascript">
+			<!--Hide script from old browsers
+			//intro to dsp index
+			var page = "online_advanced_windows_sec";
+			var section = "index_online_sec_sec";
+			var curr1PageIndex = 2;
+			var curr2PageIndex = 1;
+			var curr3PageIndex = 3;
+			//end hiding of script -->
+		</script>
+	</head>
+	<body>
+		<div id="outerWrapper">
+			<div id="innerWrapper">
+				<noscript><p class="declaration">This web site uses Javascript. We use Javascript to improve the user's experience and to enable better maintenance of our site.<br /><br />To be able to view this site properly it is necessary to either <span class="emphasis">enable Javascript</span> or click on <span class="emphasis">allow blocked content</span><br /><br />We promise that we <span class="emphasis">do not:</span></p><ul class="middle"><li>give you content you do not want</li><li>collect any information from your computer</li><li>damage data on your computer</li><li>install software on your computer with or without your consent</li><li>allow someone else to  your computer remotely</li></ul></noscript>
+				<img class="right" src="../../../graphics/composite_training_banner.jpg" alt="We offer training classes and eBooks on DSP, and in Media Processing (TriMedia)" title="We offer training classes and eBooks on DSP, and in Media Processing (TriMedia)" height="99" width="300" />
+				<img alt="Company logo" title="Bores Signal Processing logo" src="../../../graphics/logo.gif" height="100" width="150" />			
+				<h1>Advanced DSP - FFT windows: coherant power gain</h1> 
+				<div class="hMenu">
+					<script type="text/javascript" src="../../../scripts/horizontal_menu.js"></script>
+				</div>
+				<table class="main">
+					<tr>
+						<td class="menuCell">
+							<script type="text/javascript" src="../../../scripts/courses_menu.js"></script>
+						</td>
+						<td class="mainCell">
+							<p>Applying a <a href="../../intro/freq/3_window.htm">window function</a> makes the signal smoothly approach zero at both ends. This affects the total signal power:</p>
+								<img src="gifs/10_cpg1.gif" width="512" height="296" title="Applying a window function" alt="Applying a window function" />
+								<p>Because the window function attenuates the signal at both ends, it reduces the overall signal power. This reduction in signal power is called the <span class="red">Coherent Power Gain</span>. Its result is that the amplitude you measure at the <a href="10_kern.htm">FFT bin</a> is not the same as the 'real' amplitude of the signal's <a href="../../intro/freq/3_spect.htm">frequency component</a> at that frequency. The contribution from the signal's frequency component at the FFT bin is reduced by the Coherent Power Gain. This is one reason why amplitudes measured from a <a href="../../intro/freq/3_ft.htm">Fourier Transform</a> never quite seem to be as expected.</p> 
+								<p><span class="note">Don't blame me for calling a reduction in signal power a Coherent Power <span class="red">Gain</span> - I don't make up these terms, I just have to live with them.</span></p> 
+								<p>For an ideal, single discrete line frequency component, the 'noiseless' signal contribution to the FFT bin is proportional to the signal amplitude. The proportionality factor is the area under the window function's <a href="10_kern.htm">kernel</a> - or in a sampled system, the sum of the amplitudes of the window function. The Coherent Power Gain is the square of this, or in other words the Coherent Power Gain is the square of the sum of the amplitudes of the window function's kernel.</p> 
+								<p>You may notice that the Coherent Power Gain is just the DC gain of the window function.</p> 
+								<p>For a rectangular window, where every amplitude is 1, the DC gain is N - the number of terms - and the Coherent Power Gain is N^2: but for any other window function the DC gain will be reduced because the window function goes smoothly to zero at its ends and so reduces the signal power.</p> 
+								<p>Coherent Power Gain is important because it represents a definite scaling of the amplitudes of the measured <a href="../../intro/freq/3_spect.htm">frequency spectrum</a> which requires correction for any absolute measurements to be correct.</p> 
+								<p>Coherent Power Gain is usually normalised by dividing by the number of terms N, so that the Coherent Power Gain of a rectangular window function would be normalised to 1.</p> 
+								<p>
+									<img class="right" src="../../gifs/buttons.jpg" usemap="#map1" width="171" height="18" title="Forward reverse buttons" alt="click to move backward/forward" /> 
+		          		<map name="map1" id="map1">
+			          		<area shape="rect" coords="2,3,42,15" href="index.htm" alt="go back to start of module" /><!--go back to start of module -->
+			          		<area shape="rect" coords="43,2,84,16" href="10_filt.htm" alt="go back to previous page" /><!--go back to previous page -->
+			          		<area shape="rect" coords="84,2,127,15" href="10_enb.htm" alt="go to next page" /><!--go to next page -->
+			          		<area shape="rect" coords="126,2,169,16" href="10_end.htm" alt="go to end of module" /><!--go to next module -->  
+		          		</map>
+									<img class="right" src="../../gifs/copyrite.jpg" width="171" height="20"	alt="Copyrite:Bores Signal Processing" /> <br /><br /><br /><br />
+		        		</p>
+		      		</td>
+			  		</tr>
+					</table>	
+				</div>
+				<hr></hr>
+				<div class="footer">
+					<script type="text/javascript" src="../../../scripts/address_level4.js"></script>
+  			</div>
+			</div>		
+		</body>
+</html>

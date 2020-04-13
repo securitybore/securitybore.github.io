@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/xhtml-strict.dtd">
+<html> 
+	<head>
+  	<title>Bores Signal Processing - Introduction to DSP - time domain: correlation funtions</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="keywords" content="Bores signal processing,training,DSP,FIR,IIR,filters,Fast Fourier Transforms,FFT, correlation, correlation functions" />
+		<meta name="author" content="Bores Signal Processing" />
+		<meta name="description" content="Training in DSP, software architectures and Philips TriMedia architectures" />
+		<link href="../../../css/global.css" rel="stylesheet" />
+		<!-- validated -->
+		<script type ="text/javascript">
+			<!--Hide script from old browsers
+			var page = "online_dsp_time_sec";
+			var section = "index_online_sec_sec";
+			var curr1PageIndex = 1;
+			var curr2PageIndex = 2;
+			var curr3PageIndex = 3;			
+			//end hiding of script -->
+		</script>
+	</head>
+  <body>
+	  <div id="outerWrapper">
+		  <div id="innerWrapper">
+				<noscript><p class="declaration">This web site uses Javascript. We use Javascript to improve the user's experience and to enable better maintenance of our site.<br /><br />To be able to view this site properly it is necessary to either <span class="emphasis">enable Javascript</span> or click on <span class="emphasis">allow blocked content</span><br /><br />We promise that we <span class="emphasis">do not:</span></p><ul class="middle"><li>give you content you do not want</li><li>collect any information from your computer</li><li>damage data on your computer</li><li>install software on your computer with or without your consent</li><li>allow someone else to  your computer remotely</li></ul></noscript>
+		<a href="../../../ebooks/art_of_ip.htm"><img class="right" src="../../../ebooks/graphics/art_of_ip.png" alt="The Art of Image Processing - Kindle eBook" title="The Art of Image Processing - Kindle eBook" height="150" width="150" /></a>
+			  <img alt="Company logo" title="Bores Signal Processing logo" src="../../../graphics/logo.gif" height="100" width="150" />
+			  <h1>Introduction to DSP - time domain processing: correlation functions</h1>
+			  <div class="hMenu">
+				  <script type="text/javascript" src="../../../scripts/horizontal_menu.js"></script>
+			  </div>
+			  <table class="main">
+				  <tr>
+					  <td class="menuCell">
+						  <script type="text/javascript" src="../../../scripts/courses_menu.js"></script>
+					  </td>
+					  <td class="mainCell">
+						<p>The correlation function shows how similar two signals are, and for how long they remain similar when one is shifted with respect to the other.</p>
+						<p>Correlating a signal with itself is called <a href="2_auto.htm">autocorrelation</a>. Different sorts of signal have distinctly different autocorrelation functions. We can use these differences to tell signals apart.</p>
+						<img src="gifs/2_func.gif" width="512" height="290" title="Correlation of signals" alt="correlation of random noise and periodic signals" />
+						<p>The diagram shows three different types of signal:</p>
+						<ul>
+						  <li>Random noise is defined to be uncorrelated - this means it is only	 similar to itself with no shift at all. Even a shift of one sample either way means there is no correlation at all, so the correlation function of random noise with itself is a single sharp spike at shift zero.</li>
+							<li>Periodic signals go in and out of phase as one is shifted with respect to the other. So they will show strong correlation at any shift where the peaks coincide. The autocorrelation function of a periodic signal is itself a periodic signal, with a period the same as that of the original signal.</li>
+							<li>Short signals can only be similar to themselves for small values of shift, so their autocorrelation functions are short.</li>
+					  </ul>
+						<p>The three types of signal have easily recognisable autocorrelation functions.</p>
+						<p>
+						  <img src="gifs/copyrite.jpg" width="171" height="20"	alt="Copyrite:Bores Signal Processing" />
+		            <img class="right" src="../gifs/buttons.jpg" usemap="#map1" width="171" height="18" alt="backward/forward" /> 
+		            <map name="map1" id="map1">
+			            <!--go back to start of module -->
+			            <area shape="rect" coords="2,3,42,15" href="index.htm" alt="go back to start of module" /><!--go back to start of module -->
+			            <area shape="rect" coords="43,2,84,16" href="2_corr.htm" alt="go back to previous page" /><!--go to previous page -->
+			            <area shape="rect" coords="84,2,127,15" href="2_auto.htm" alt="go to next page" /><!--go to next page -->
+			            <area shape="rect" coords="126,2,169,16" href="../freq/index.htm" alt="go to next module" /> 
+		            </map>
+		          </p>
+	          </td>
+          </tr>
+        </table>	
+		  </div>
+		  <hr></hr>
+		  <div class="footer">
+				<script type="text/javascript" src="../../../scripts/address_level4.js"></script>
+  		</div>
+		</div>		
+	</body>
+</html>

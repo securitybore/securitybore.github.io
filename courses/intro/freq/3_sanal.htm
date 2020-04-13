@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/xhtml-strict.dtd">
+<html> 
+	<head>
+  	<title>Bores Signal Processing - Introduction to DSP - frequency analysis: frequency spectra</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="keywords" content="Bores signal processing,training,DSP,FIR,IIR,filters,Fast Fourier Transforms,FFT,frequency, wavelets" />
+		<meta name="author" content="Bores Signal Processing" />
+		<meta name="description" content="Training in DSP, software architectures and Philips TriMedia architectures" />
+		<link href="../../../css/global.css" rel="stylesheet" />
+		<script type ="text/javascript">
+			<!--Hide script from old browsers
+			var page = "online_dsp_freq_sec";
+			var section = "index_online_sec_sec";
+			var curr1PageIndex = 1;
+			var curr2PageIndex = 3;
+			var curr3PageIndex = 3;			
+			//end hiding of script -->
+		</script>
+		<!-- validated -->
+	</head>
+  <body>
+	  <div id="outerWrapper">
+		  <div id="innerWrapper">
+				<noscript><p class="declaration">This web site uses Javascript. We use Javascript to improve the user's experience and to enable better maintenance of our site.<br /><br />To be able to view this site properly it is necessary to either <span class="emphasis">enable Javascript</span> or click on <span class="emphasis">allow blocked content</span><br /><br />We promise that we <span class="emphasis">do not:</span></p><ul class="middle"><li>give you content you do not want</li><li>collect any information from your computer</li><li>damage data on your computer</li><li>install software on your computer with or without your consent</li><li>allow someone else to  your computer remotely</li></ul></noscript>
+		<a href="../../../ebooks/art_of_dsp.htm"><img class="right" src="../../../ebooks/graphics/art_of_dsp.png" alt="The Art of DSP - Kindle eBook" title="The Art of DSP - Kindle eBook" height="150" width="150" /></a>
+			  <img alt="Company logo" title="Bores Signal Processing logo" src="../../../graphics/logo.gif" height="100" width="150" />
+			  <h1>Introduction to DSP - frequency: frequency spectra II</h1>
+			  <div class="hMenu">
+				  <script type="text/javascript" src="../../../scripts/horizontal_menu.js"></script>
+			  </div>
+			  <table class="main">
+				  <tr>
+					  <td class="menuCell">
+						  <script type="text/javascript" src="../../../scripts/courses_menu.js"></script>
+					  </td>
+					  <td class="mainCell">
+						  <p>Using the <a href="3_ft.htm">Fourier transform</a>, any signal can be analysed into its frequency components.</p>
+							<p>Every signal has a frequency spectrum.</p>
+							<ul>
+							  <li>the signal defines the spectrum</li>
+								<li>the spectrum defines the signal</li>
+							</ul>
+							<p>We can move back and forth between the time domain and the frequency domain without losing information.</p>
+							<p class="grey">The above statement is true mathematically, but is quite incorrect in any practical sense - since we will lose information due to errors in the calculation, or due to deliberately missing out some information that we can't measure or can't compute. But the basic idea is a good one when visualising time signals and their frequency spectra.</p>
+							<img src="gifs/3_sanal.gif" width="512" height="258" title="Signals and their frequency spectra" alt="signals and their frequency spectra" />
+							<p>The diagram shows a number of signals and their frequency spectra.</p>
+							<p>Understanding the relation between time and frequency domains is useful:</p>
+							<ul>
+							  <li>some signals are easier to visualise in the frequency domain</li>
+								<li>some signals are easier to visualise in the time domain</li>
+								<li>some signals take less information to define in the time domain</li>
+								<li>some signals take less information to define in the frequency domain</li>
+							</ul>
+							<p>For example a sine wave takes a lot of information to define accurately in the time domain: but in the frequency domain we only need three data - the frequency, amplitude and phase.</p>
+							<p>
+							  <img class="right" src="../gifs/buttons.jpg" usemap="#map1" width="171" height="18" alt="backward/forward" /> 
+		  			     <map name="map1" id="map1">
+			 			       <area shape="rect" coords="2,3,42,15" href="index.htm" alt="go back to start of module" /><!--go back to start of module -->
+			 			       <area shape="rect" coords="43,2,84,16" href="3_spect.htm" alt="go back to previous page" /><!--go to previous page -->
+			 			       <area shape="rect" coords="84,2,127,15" href="3_conv.htm" alt="go to next page" /><!--go to next page -->
+			 			       <area shape="rect" coords="126,2,169,16" href="../filters/index.htm" alt="go to next module" />  
+		  			     </map>
+					     </p>
+				      </td>
+			      </tr>
+		      </table>	
+		    </div>
+		    <hr></hr>
+		    <div class="footer">
+				  <script type="text/javascript" src="../../../scripts/address_level4.js"></script>
+  		  </div>
+		 </div>		
+	</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/xhtml-strict.dtd">
+<html> 
+	<head>
+  	<title>Bores Signal Processing - Introduction to DSP - IIR filters - digital filter equation</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="keywords" content="DSP online teaching signals digital signal processing IIR FIR filters frequency response window functions" />
+		<meta name="author" content="Bores Signal Processing" />
+		<meta name="description" content="Training in DSP, software architectures and Philips TriMedia architectures" />
+		<link href="../../../css/global.css" rel="stylesheet" />
+		<script type ="text/javascript">
+			<!--Hide script from old browsers
+			var page = "online_dsp_iir_sec"; // for courses_menu
+			var section = "index_online_sec_sec";  //for horizontal menu
+			var curr1PageIndex = 1;  //level1 of the menu
+			var curr2PageIndex = 5;	//level2 of the menu
+			var curr3PageIndex = 1;	//level3 of the menu		
+			//end hiding of script -->
+		</script>
+		<!-- validated -->
+	</head>
+  <body>
+	   <div id="outerWrapper">
+		  <div id="innerWrapper">
+				<noscript><p class="declaration">This web site uses Javascript. We use Javascript to improve the user's experience and to enable better maintenance of our site.<br /><br />To be able to view this site properly it is necessary to either <span class="emphasis">enable Javascript</span> or click on <span class="emphasis">allow blocked content</span><br /><br />We promise that we <span class="emphasis">do not:</span></p><ul class="middle"><li>give you content you do not want</li><li>collect any information from your computer</li><li>damage data on your computer</li><li>install software on your computer with or without your consent</li><li>allow someone else to  your computer remotely</li></ul></noscript>
+			  <img class="right" src="../../../graphics/composite_training_banner.jpg" alt="We offer training classes and eBooks on DSP, and in Media Processing (TriMedia)" title="We offer training classes and eBooks on DSP, and in Media Processing (TriMedia)" height="99" width="300" />
+			  <img alt="Company logo" title="Bores Signal Processing logo" src="../../../graphics/logo.gif" height="100" width="150" />
+			  <h1>Introduction to DSP - IIR filters: index</h1>
+			  <div class="hMenu">
+				  <script type="text/javascript" src="../../../scripts/horizontal_menu.js"></script>
+			  </div>
+			  <table class="main">
+				  <tr>
+					  <td class="menuCell">
+						  <script type="text/javascript" src="../../../scripts/courses_menu.js"></script>
+					  </td>
+					  <td class="mainCell">
+							<p>Output from a digital filter is made up from previous inputs and previous outputs, using the operation of <a href="../time/2_conv.htm">convolution</a>: </p>
+							<img src="gifs/5_eq1.gif"	width="256" height="121" title="Digital filter equation" alt="Digital filter equation" />
+							<p>Two convolutionsare involved: one with the previous inputs, and one with the previous outputs. In each case the convolving function is called the filter <span class="red">coefficients</span>. </p>
+							<p>If such a filter is subjected to an impulse (a signal consisting of one value followed by zeroes) then its output need not necessarily become zero after the impulse has run through the summation. So the <a href="../filters/4_spec.htm">impulse response</a> of such a filter can be infinite in duration. Such a filter is called an <span class="red">Infinite Impulse Response</span> filter or <span class="red">IIR</span> filter.</p>
+							<img src="gifs/5_eq4.gif" width="256" height="155" title="Infinite impulse response" alt="Infinite impulse response" />
+							<p>Note that the impulse response need not necessarily be infinite: if it were, the filter would be unstable. In fact for most practical filters, the impulse response will die away to a negligibly small level. One might argue that mathematically the response can go on for ever, getting smaller and smaller: but in a digital world once a level gets below one bit it might as well be zero. The <span class="red">Infinite Impulse Response</span> refers to the ability of the filter to have an infinite impulse response and does not imply that it necessarily will have one: it serves as a warning that this type of filter is prone to feedback and instability.</p>
+							<p>The filter can be drawn as a block diagram:</p>
+							<img src="gifs/5_eq2.gif" width="256" height="122" title="Block diagram of an IIR filter" alt="Block diagram of an IIR filter" />
+							<p>The filter diagram can show what hardware elements will be required when implementing the filter:</p>
+							<img src="gifs/5_eq3.gif" width="256" height="184" title="Hardware elements required for an IIR filter" alt="Hardware elements required for an IIR filter" />
+							<p>The left hand side of the diagram shows the direct path, involving previous inputs: the right hand side shows the feedback path, operating upon previous outputs.</p>
+							<p>
+								<img class="right" src="../gifs/buttons.jpg" usemap="#map1" width="171" height="18" alt="backward/forward" /> 
+		  			    <map name="map1" id="map1">
+			 			      <area shape="rect" coords="2,3,42,15" href="index.htm" alt="go back to start of module" /><!--go back to start of module -->
+			 			      <area shape="rect" coords="43,2,84,16" href="index.htm" alt="go back to previous page" /><!--go to previous page -->
+			 			      <area shape="rect" coords="84,2,127,15" href="5_resp.htm" alt="go to next page" /><!--go to next page -->
+			 			      <area shape="rect" coords="126,2,169,16" href="../chips/index.htm" alt="go to next module" /><!-- go to next module -->  
+		  			    </map>
+					    </p>
+				    </td>
+			    </tr>
+		    </table>	
+		  </div>
+		  <hr></hr>
+		  <div class="footer">
+				<script type="text/javascript" src="../../../scripts/address_level4.js"></script>
+  		</div>
+		</div>		
+	</body>
+</html>

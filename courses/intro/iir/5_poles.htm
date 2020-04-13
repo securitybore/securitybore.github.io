@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/xhtml-strict.dtd">
+<html> 
+	<head>
+  	<title>Bores Signal Processing - Introduction to DSP - IIR filters - poles and zeros</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="keywords" content="DSP, online teaching, signals, digital signal processing, IIR, FIR, filters, frequency response, window, functions" />
+		<meta name="author" content="Bores Signal Processing" />
+		<meta name="description" content="Training in DSP, software architectures and Philips TriMedia architectures" />
+		<link href="../../../css/global.css" rel="stylesheet" />
+		<script type ="text/javascript">
+			<!--Hide script from old browsers
+			var page = "online_dsp_iir_sec"; // for courses_menu
+			var section = "index_online_sec_sec";  //for horizontal menu
+			var curr1PageIndex = 1;  //level1 of the menu
+			var curr2PageIndex = 5;	//level2 of the menu
+			var curr3PageIndex = 6;	//level3 of the menu		
+			//end hiding of script -->
+		</script>
+		<!-- validated -->
+	</head>
+  <body>
+	   <div id="outerWrapper">
+		  <div id="innerWrapper">
+				<noscript><p class="declaration">This web site uses Javascript. We use Javascript to improve the user's experience and to enable better maintenance of our site.<br /><br />To be able to view this site properly it is necessary to either <span class="emphasis">enable Javascript</span> or click on <span class="emphasis">allow blocked content</span><br /><br />We promise that we <span class="emphasis">do not:</span></p><ul class="middle"><li>give you content you do not want</li><li>collect any information from your computer</li><li>damage data on your computer</li><li>install software on your computer with or without your consent</li><li>allow someone else to  your computer remotely</li></ul></noscript>
+			  <img class="right" src="../../../graphics/composite_training_banner.jpg" alt="We offer training classes and eBooks on DSP, and in Media Processing (TriMedia)" title="We offer training classes and eBooks on DSP, and in Media Processing (TriMedia)" height="99" width="300" />
+			  <img alt="Company logo" title="Bores Signal Processing logo" src="../../../graphics/logo.gif" height="100" width="150" />
+			  <h1>Introduction to DSP - IIR filters: poles and zeros</h1>
+			  <div class="hMenu">
+				  <script type="text/javascript" src="../../../scripts/horizontal_menu.js"></script>
+			  </div>
+			  <table class="main">
+				  <tr>
+					  <td class="menuCell">
+						  <script type="text/javascript" src="../../../scripts/courses_menu.js"></script>
+					  </td>
+					  <td class="mainCell">
+							<p>The IIR filter's <a href="5_z.htm">transfer function</a> is a ratio of terms.</p>
+							<ul>
+								<li> if the numerator becomes zero, the transfer functionwill also become zero - this is called a <span class="red">zero</span> of the function</li>
+								<li>if the denominator becomes zero, we have a division by zero - the function can become infinitely large - this is called a <span class="red">pole</span> of the function</li>
+							</ul>
+							<img src="gifs/5_poles1.gif" width="256" height="153" title="Filter frequency response equation" alt="Filter frequency response equation" />
+							<p>The positions of poles (very large values) affects the stability of the filter:</p>
+							<img src="gifs/5_poles2.gif" width="256" height="96" title="Poles and Zeros" alt="Digram showing positons of poles and zeros" />
+							<p>The shape of the transfer function H(z) is determined by the positions of its poles and zeroes:</p>
+							<img src="gifs/5_poles3.gif" width="256" height="121" title="Visualisation of the transfer function" alt="Visualisation of the transfer function" />
+							<p>This can be visualised using the <span class="red">rubber sheet</span> analogy: </p>
+							<ul>
+								<li>imagine the <a href="5_ztran.htm">Argand diagram</a> laid out on the floor </li>
+								<li>place tall vertical poles at the poles of the function</li>
+								<li>stretch a rubber sheet over the poles</li>
+								<li>at zeroes, pin the rubber sheet to the floor</li>
+								<li>the rubber sheet will take up a shape which is determined by the position of the poles and zeroes</li>
+							</ul>
+							<p class="grey">Thanks are due to Jim Richardson for the rubber sheet analogy, which came to mind while he was an instructor officer at the Royal Naval Engineering College, Devonport.</p>
+							<p>Now the frequency response is the transfer function H(z) evaluated around the unit circle on the Argand diagram of z:</p>
+							<img src="gifs/5_z3.gif" width="256" height="109" title="Argand diagram of z" alt="Argand diagram of z" />
+							<p>and since the shape of the transfer function can be determined from the positions of its poles and zeroes, so can the frequency response.</p>
+							<img src="gifs/5_poles4.gif" width="256" height="116" title="Unit circle" alt="unit circle" />
+							<p>The frequency response can be determined by tracing around the unit circle on the Argand diagram of the z plane:</p>
+							<ul>
+								<li>project poles and zeroes radially to hit the unit circle</li>
+								<li><span class="red">poles</span> cause bumps</li>
+								<li><span class="red">zeroes</span> cause dips</li> 
+		  					<li>the closer to the unit circle, the sharper the feature</li>
+							</ul>
+							<p>
+								<img class="right" src="../gifs/buttons.jpg" usemap="#map1" width="171" height="18" alt="backward/forward" /> 
+		  			    <map name="map1" id="map1">
+			 			      <area shape="rect" coords="2,3,42,15" href="index.htm" alt="go back to start of module" /><!--go back to start of module -->
+			 			      <area shape="rect" coords="43,2,84,16" href="5_decay.htm" alt="go back to previous page" /><!--go to previous page -->
+			 			      <area shape="rect" coords="84,2,127,15" href="5_invar.htm" alt="go to next page" /><!--go to next page -->
+			 			      <area shape="rect" coords="126,2,169,16" href="../chips/index.htm" alt="go to next module" /><!-- go to next module -->  
+		  			    </map>
+					    </p>
+				    </td>
+			    </tr>
+		    </table>	
+		  </div>
+		  <hr></hr>
+		  <div class="footer">
+				<script type="text/javascript" src="../../../scripts/address_level4.js"></script>
+  		</div>
+		</div>		
+	</body>
+</html>

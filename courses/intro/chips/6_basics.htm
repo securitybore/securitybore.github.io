@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/xhtml-strict.dtd">
+<html> 
+	<head>
+  	<title>Bores Signal Processing - Introduction to DSP - characteristics</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="keywords" content="DSP online teaching signals digital signal processing IIR FIR filters frequency response window functions" />
+		<meta name="author" content="Bores Signal Processing" />
+		<meta name="description" content="Training in DSP, software architectures and Philips TriMedia architectures" />
+		<link href="../../../css/global.css" rel="stylesheet" />
+		<script type ="text/javascript">
+			<!--Hide script from old browsers
+			var page = "online_dsp_chips_sec"; // for courses_menu
+			var section = "index_online_sec_sec";  //for horizontal menu
+			var curr1PageIndex = 1;  //level1 of the menu
+			var curr2PageIndex = 6;	//level2 of the menu
+			var curr3PageIndex = 1;	//level3 of the menu		
+			//end hiding of script -->
+		</script>
+		<!-- validated -->
+	</head>
+  <body>
+	   <div id="outerWrapper">
+		  <div id="innerWrapper">
+				<noscript><p class="declaration">This web site uses Javascript. We use Javascript to improve the user's experience and to enable better maintenance of our site.<br /><br />To be able to view this site properly it is necessary to either <span class="emphasis">enable Javascript</span> or click on <span class="emphasis">allow blocked content</span><br /><br />We promise that we <span class="emphasis">do not:</span></p><ul class="middle"><li>give you content you do not want</li><li>collect any information from your computer</li><li>damage data on your computer</li><li>install software on your computer with or without your consent</li><li>allow someone else to  your computer remotely</li></ul></noscript>
+			  <img class="right" src="../../../graphics/composite_training_banner.jpg" alt="We offer training classes and eBooks on DSP, and in Media Processing (TriMedia)" title="We offer training classes and eBooks on DSP, and in Media Processing (TriMedia)" height="99" width="300" />
+			  <img alt="Company logo" title="Bores Signal Processing logo" src="../../../graphics/logo.gif" height="100" width="150" />
+			  <h1>Introduction to DSP - DSP processors: characteristics</h1>
+			  <div class="hMenu">
+				  <script type="text/javascript" src="../../../scripts/horizontal_menu.js"></script>
+			  </div>
+			  <table class="main">
+				  <tr>
+					  <td class="menuCell">
+						  <script type="text/javascript" src="../../../scripts/courses_menu.js"></script>
+					  </td>
+					  <td class="mainCell"> 
+							<p>Although there are many DSP processors, they are mostly designed with the same few basic operations in mind: so they share the same set of basic characteristics. These characteristics fall into three categories:</p> 
+							<ul> 
+		  					<li>specialised high speed <a href="6_maths.htm">arithmetic</a></li> 
+		  					<li><a href="6_world.htm">data transfer</a> to and from the real world</li> 
+		  					<li>multiple access <a href="6_mem.htm">memory architectures</a></li> 
+							</ul> 
+							<p>Typical <a href="../basics/1_whatis.htm">DSP</a> operations require a few specific operations:</p>
+							<img src="gifs/6_ops1.gif" width="512" height="150" title="DSP operations" alt="DSP operations" /> 
+							<p>The diagram shows an <a href="../filters/4_fir.htm">FIR filter</a>. This illustrates the basic DSP operations:</p> 
+							<ul> 
+		  					<li>additions and multiplications</li> 
+		  					<li>delays</li> 
+		  					<li>array handling</li> 
+							</ul> 
+							<p>Each of these operations has its own special set of requirements:</p>
+							<img src="gifs/6_ops2.gif" width="51"	height="25" title="Additions" alt="additions" /> 
+							<p><span class="red">additions and multiplications</span> require us to:</p> 
+						<ul> 
+		  				<li>fetch two operands</li> 
+		  				<li>perform the addition or multiplication (usually both)</li> 
+		  				<li>store the result or hold it for a repetition</li> 
+						</ul> 
+						<p><img src="gifs/6_ops3.gif" width="29" height="25" title="Delays" alt="delays" /><span class="red">delays</span> require us to:</p> 
+						<ul> 
+		  				<li>hold a value for later use</li> 
+						</ul> 
+						<p><img src="gifs/6_ops4.gif" width="34" height="25" title="Array handling" alt="array handling" /><span class="red">array handling</span> requires us
+		  to:</p> 
+						<ul> 
+		  				<li>fetch values from consecutive memory locations</li> 
+		  				<li>copy data from memory to memory</li> 
+						</ul> 
+						<p>To suit these fundamental operations DSP processors often have:</p> 
+						<ul> 
+		  				<li>parallel multiply and add</li> 
+		  				<li>multiple memory accesses (to fetch two operands and store the result)</li> 
+		  				<li>lots of registers to hold data temporarily</li> 
+		 					<li>efficient address generation for array handling</li> 
+		  				<li>special features such as delays or circular addressing</li> 
+						</ul> 
+						<p>
+							<img class="right" src="../gifs/buttons.jpg" usemap="#map1" width="171" height="18" alt="backward/forward" /> 
+		  			    <map name="map1" id="map1">
+			 			      <area shape="rect" coords="2,3,42,15" href="index.htm" alt="go back to start of module" /><!--go back to start of module -->
+			 			      <area shape="rect" coords="43,2,84,16" href="index.htm" alt="go back to previous page" /><!--go to previous page -->
+			 			      <area shape="rect" coords="84,2,127,15" href="6_maths.htm" alt="go to next page" /><!--go to next page -->
+			 			      <area shape="rect" coords="126,2,169,16" href="../program/index.htm" alt="go to next module" /><!-- go to next module -->  
+		  			    </map>
+					    </p>
+				    </td>
+			    </tr>
+		    </table>	
+		  </div>
+		  <hr></hr>
+		  <div class="footer">
+				<script type="text/javascript" src="../../../scripts/address_level4.js"></script>
+  		</div>
+		</div>		
+	</body>
+</html>

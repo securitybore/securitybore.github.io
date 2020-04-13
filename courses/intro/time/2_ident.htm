@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/xhtml-strict.dtd">
+<html> 
+	<head>
+  	<title>Bores Signal Processing - Introduction to DSP - time domain: cross correlation to identify a signal</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="keywords" content="Bores signal processing,training,DSP,FIR,IIR,filters,Fast Fourier Transforms,FFT, correlation, autocorrelation" />
+		<meta name="author" content="Bores Signal Processing" />
+		<meta name="description" content="Training in DSP, software architectures and Philips TriMedia architectures" />
+		<link href="../../../css/global.css" rel="stylesheet" />
+		<!-- validated -->
+		<script type ="text/javascript">
+			<!--Hide script from old browsers
+			var page = "online_dsp_time_sec";
+			var section = "index_online_sec_sec";
+			var curr1PageIndex = 1;
+			var curr2PageIndex = 2;
+			var curr3PageIndex = 6;			
+			//end hiding of script -->
+		</script>
+	</head>
+  <body>
+	  <div id="outerWrapper">
+		  <div id="innerWrapper">
+				<noscript><p class="declaration">This web site uses Javascript. We use Javascript to improve the user's experience and to enable better maintenance of our site.<br /><br />To be able to view this site properly it is necessary to either <span class="emphasis">enable Javascript</span> or click on <span class="emphasis">allow blocked content</span><br /><br />We promise that we <span class="emphasis">do not:</span></p><ul class="middle"><li>give you content you do not want</li><li>collect any information from your computer</li><li>damage data on your computer</li><li>install software on your computer with or without your consent</li><li>allow someone else to  your computer remotely</li></ul></noscript>
+		<a href="../../../ebooks/art_of_dsp.htm"><img class="right" src="../../../ebooks/graphics/art_of_dsp.png" alt="The Art of DSP - Kindle eBook" title="The Art of DSP - Kindle eBook" height="150" width="150" /></a>
+			  <img alt="Company logo" title="Bores Signal Processing logo" src="../../../graphics/logo.gif" height="100" width="150" />
+			  <h1>Introduction to DSP - time domain processing: cross correlation II</h1>
+			  <div class="hMenu">
+				  <script type="text/javascript" src="../../../scripts/horizontal_menu.js"></script>
+			  </div>
+			  <table class="main">
+				  <tr>
+					  <td class="menuCell">
+						  <script type="text/javascript" src="../../../scripts/courses_menu.js"></script>
+					  </td>
+					  <td class="mainCell">
+						  <p>Cross correlation (correlating a signal with another) can be used to identify a signal by comparison with a library of known reference signals.</p>
+						  <img src="gifs/2_ident.gif" width="512" height="182" title="Cross correlation to identify a signal" alt="Using cross correlation to identify a signal" />
+						  <p>The diagram shows how the unknown signal can be identified.</p>
+						  <ul>
+						    <li>A copy of a known reference signal is correlated with the unknown signal.</li>
+							  <li>The correlation will be high if the reference is similar to the unknown signal.</li>
+							  <li>The unknown signal is correlated with a number of known reference functions.</li>
+							  <li>A large value for correlation shows the degree of similarity to the reference.</li>
+							  <li>The largest value for correlation is the most likely match.</li>
+						  </ul>
+						  <p>Cross correlation is one way in which sonar can identify different types of vessel.</p>
+						  <ul>
+						    <li>Each vessel has a unique sonar 'signature'.</li>
+							  <li>The sonar system has a library of pre-recorded echoes from different vessels.</li>
+							  <li>An unknown sonar echo is correlated with a library of reference echoes.</li>
+							  <li>The largest correlation is the most likely match.</li>
+						  </ul> 
+						  <p>
+						    <img src="gifs/copyrite.jpg" width="171" height="20"	alt="Copyrite:Bores Signal Processing" />
+		            <img class="right" src="../gifs/buttons.jpg" usemap="#map1" width="171" height="18" alt="backward/forward" /> 
+		            <map name="map1" id="map1">
+							    <area shape="rect" coords="2,3,42,15" href="index.htm" alt="go back to start of module" /><!--go back to start of module -->
+			            <area shape="rect" coords="43,2,84,16" href="2_locate.htm" alt="go back to previous page" /><!--go to previous page -->
+			            <area shape="rect" coords="84,2,127,15" href="2_conv.htm" alt="go to next page" /><!--go to next page -->
+			            <area shape="rect" coords="126,2,169,16" href="../freq/index.htm" alt="go to next module" /> 
+		            </map>
+		          </p>
+	          </td>
+          </tr>
+        </table>	
+		  </div>
+		  <hr></hr>
+		  <div class="footer">
+		    <script type="text/javascript" src="../../../scripts/address_level4.js"></script>
+  	  </div>
+    </div>		
+  </body>
+</html>
+						
+		

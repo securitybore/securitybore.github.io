@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/xhtml-strict.dtd">
+<html> 
+	<head>
+  	<title>Bores Signal Processing - Introduction to DSP - Filtering: FIR Filter design by the window method</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="keywords" content="DSP,signals,digital signal processing,IIR,FIR,digital filters,frequency response,window functions" />
+		<meta name="author" content="Bores Signal Processing" />
+		<meta name="description" content="Training in DSP, software architectures and Philips TriMedia architectures" />
+		<link href="../../../css/global.css" rel="stylesheet" />
+		<script type ="text/javascript">
+			<!--Hide script from old browsers
+			var page = "online_dsp_filters_sec";
+			var section = "index_online_sec_sec";
+			var curr1PageIndex = 1;
+			var curr2PageIndex = 4;
+			var curr3PageIndex = 9;			
+			//end hiding of script -->
+		</script>
+		<!-- validated -->
+	</head>
+  <body>
+	   <div id="outerWrapper">
+		  <div id="innerWrapper">
+				<noscript><p class="declaration">This web site uses Javascript. We use Javascript to improve the user's experience and to enable better maintenance of our site.<br /><br />To be able to view this site properly it is necessary to either <span class="emphasis">enable Javascript</span> or click on <span class="emphasis">allow blocked content</span><br /><br />We promise that we <span class="emphasis">do not:</span></p><ul class="middle"><li>give you content you do not want</li><li>collect any information from your computer</li><li>damage data on your computer</li><li>install software on your computer with or without your consent</li><li>allow someone else to  your computer remotely</li></ul></noscript>
+			  <img class="right" src="../../../graphics/composite_training_banner.jpg" alt="We offer training classes and eBooks on DSP, and in Media Processing (TriMedia)" title="We offer training classes and eBooks on DSP, and in Media Processing (TriMedia)" height="99" width="300" />
+			  <img alt="Company logo" title="Bores Signal Processing logo" src="../../../graphics/logo.gif" height="100" width="150" />
+			  <h1>Introduction to DSP - filtering: FIR Filter design by window III</h1>
+			  <div class="hMenu">
+				  <script type="text/javascript" src="../../../scripts/horizontal_menu.js"></script>
+			  </div>
+			  <table class="main">
+				  <tr>
+					  <td class="menuCell">
+						  <script type="text/javascript" src="../../../scripts/courses_menu.js"></script>
+					  </td>
+					  <td class="mainCell">
+						  <p><a href="4_fir.htm">FIR</a> <a href="4_eq.htm">filter coefficients</a>can be calculated using the <a href="4_window.htm">window method</a>:</p>
+							<ul>
+							  <li>pretend we don't mind lots of filter coefficients </li>
+								<li>specify the desired <a href="4_spec.htm">frequency response</a> using lots of <a href="../basics/1_conver.htm">samples</a></li>
+								<li>calculate the <a href="../freq/3_ft.htm">inverse Fourier transform</a></li>
+								<li>this gives us a lot of filter coefficients</li>
+								<li>so truncate the filter coefficients to give us less </li>
+								<li>apply a window function to sharpen up the filter's frequency response</li>
+								<li>then calculate the <a href="../freq/3_ft.htm">Fourier transform</a> of the truncated set of coefficients to see if it still matches our requirement</li>
+							</ul>
+							<p class="redEmphasis">BUT...</p>
+							<p>Most window functions have a fixed attenuation to the top of their first sidelobe:</p>
+							<img src="gifs/4_pain.gif" width="512" height="177" title="Fixed attenuation of a window function" alt="Fixed attenuation of a window function" />
+							<p>No matter how many filter coefficients you throw at it, you cannot improve on a fixed window's attenuation.</p>
+							<p>This means that the art of <a href="4_fir.htm">FIR filter</a> design by the window method lies in an appropriate choice of <a href="../freq/3_window.htm">window function</a>:</p>
+							<img src="gifs/4_table.gif" width="512" height="308" title="Window functions" alt="window functions" />
+							<p>For example, if you need an attenuation of 20 dB or less, then a rectangle window is acceptable. If you need 43 dB you are forced to choose the Hanning window, and so on.</p>
+							<p>Sadly, the better window functions need more filter coefficients before their shape can be adequately defined. So if you need only 25 dB of attenuation you should choose a triangle window functions which will give you this attenuation: the Hamming window, for example, would give you more attenuation but require more filter coefficients to be adequately defined - and so would be wasteful of computer power.</p>
+							<p>The art of FIR filter design by the window method lies in choosing the window function which meets your requirement with the minimum number of filter coefficients.</p>
+							<p>You may notice that if you want an attenuation of 30 dB you are in trouble: the triangle window is not good enough but the Hanning window is too good (and so uses more coefficients than you need). The Kaiser window function is unique in that its shape is variable. A variable parameter defines the shape, so the Kaiser window is unique in being able to match precisely the attenuation you require without overperforming.</p>
+							<p>
+							  <img class="right" src="../gifs/buttons.jpg" usemap="#map1" width="171" height="18" alt="backward/forward" /> 
+		  			      <map name="map1" id="map1">
+			 			        <area shape="rect" coords="2,3,42,15" href="index.htm" alt="go back to start of module" /><!--go back to start of module -->
+			 			        <area shape="rect" coords="43,2,84,16" href="4_trunc.htm" alt="go back to previous page" /><!--go to previous page -->
+			 			        <area shape="rect" coords="84,2,127,15" href="4_equi.htm" alt="go to next page" /><!--go to next page -->
+			 			        <area shape="rect" coords="126,2,169,16" href="../iir/index.htm" alt="go to next module" /><!-- go to next module -->  
+		  			      </map>
+					      </p>
+				      </td>
+			      </tr>
+		      </table>	
+		    </div>
+		    <hr></hr>
+		    <div class="footer">
+				  <script type="text/javascript" src="../../../scripts/address_level4.js"></script>
+  		  </div>
+		  </div>		
+	  </body>
+</html>

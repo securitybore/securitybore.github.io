@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/xhtml-strict.dtd">
+<html> 
+	<head>
+	  <!-- validated xhtml -->
+  	<title>Bores Signal Processing - Introduction to DSP - basics: quantisation</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="keywords" content="Bores signal processing,training,DSP,FIR,IIR,filters,Fast Fourier Transforms,FFT" />
+		<meta name="author" content="Bores Signal Processing" />
+		<meta name="description" content="Training in DSP, software architectures and Philips TriMedia architectures" />
+		<link href="../../../css/global.css" rel="stylesheet" />
+		<script type ="text/javascript">
+			<!--Hide script from old browsers
+			var page = "online_dsp_basics_sec";
+			var section = "index_online_sec_sec";
+			var curr1PageIndex = 1; //sets menu items in menu level 1
+			var curr2PageIndex = 1; //sets menu items in menu level 1
+			var curr3PageIndex = 6; //sets menu items that is highlighted in menu level 3	
+			//end hiding of script -->
+		</script>
+	</head> 
+  <body>
+	 <div id="outerWrapper">
+		<div id="innerWrapper">
+			<noscript><p class="declaration">This web site uses Javascript. We use Javascript to improve the user's experience and to enable better maintenance of our site.<br /><br />To be able to view this site properly it is necessary to either <span class="emphasis">enable Javascript</span> or click on <span class="emphasis">allow blocked content</span><br /><br />We promise that we <span class="emphasis">do not:</span></p><ul class="middle"><li>give you content you do not want</li><li>collect any information from your computer</li><li>damage data on your computer</li><li>install software on your computer with or without your consent</li><li>allow someone else to  your computer remotely</li></ul></noscript>
+		<a href="../../../ebooks/art_of_ip.htm"><img class="right" src="../../../ebooks/graphics/art_of_ip.png" alt="The Art of Image Processing - Kindle eBook" title="The Art of Image Processing - Kindle eBook" height="150" width="150" /></a>
+			<img alt="Company logo" title="Bores Signal Processing logo" src="../../../graphics/logo.gif" height="100" width="150" />
+			<h1>Introduction to DSP - basics - quantisation</h1>
+			<div class="hMenu">
+				<script type="text/javascript" src="../../../scripts/horizontal_menu.js"></script>
+			</div>
+			<table class="main">
+			  <tr>
+					<td class="menuCell">
+						<script type="text/javascript" src="../../../scripts/courses_menu.js"></script>
+					</td>
+					<td class="mainCell">
+							<p>When the signal is converted to digital form, the precision is limited by the number of bits available.</p>
+							<p>The diagram shows an analogue signal which is then converted to a digital representation - in this case, with 8 bit precision.</p>
+							<p>The smoothly varying analogue signal can only be represented as a 'stepped' waveform due to the limited precision.</p>
+							<p>Sadly, the errors introduced by digitisation are both non linear and signal dependent.</p>
+							<p>Non linear means we cannot calculate their effects using normal maths.</p>
+							<p>Signal dependent means the errors are coherent and so cannot be reduced by simple means.</p>
+							<p class="grey">This is a common problem in DSP. The errors due to limited precision (ie word length) are non linear (hence incalculable) and signal dependent (hence coherent). Both are bad news, and mean that we cannot really calculate how a DSP algorithm will perform in limited precision - the only reliable way is to implement it, and test it against signals of the type expected. The non linearity can also lead to instability - particularly with <a href="../iir/index.htm">IIR</a> filters.</p>
+							<img src="gifs/1_precis.gif" width="512" height="312" title="Limited precision" alt="problems caused by limited precision" />
+							<p>The word length of hardware used for DSP processing determines the available precision and dynamic range.</p>
+							<p class="red">Uncertainty in the clock timing leads to errors in the sampled signal.</p>
+							<img src="gifs/1_timing.gif" width="512" height="312" title="Errors in the sampled signal" alt="errors in timing causes errors in the sampled signal" />
+							<p>The diagram shows an analogue signal which is held on the rising edge of a clock signal. If the clock edge occurs at a different time than expected, the signal will be held at the wrong value. Sadly, the errors introduced by timing error are both non linear and signal dependent.</p>
+							<p>A real DSP system suffers from three sources of error due to limited word length in the measurement and processing of the signal:</p>
+							<ul>
+								<li>limited precision due to word length when the analogue signal is converted to digital form</li>
+								<li>errors in arithmetic due to limited precision within the processor itself </li>
+								<li>limited precision due to word length when the digital samples are converted back to analogue form</li>
+							</ul>
+							<img src="gifs/1_quant.gif" width="256" height="106" title="Quantisation model" alt="quantisation model" />
+							<p>These errors are often called 'quantisation error'. The effects of quantisation error are in fact both non linear and signal dependent. Non linear means we cannot calculate their effects using normal maths. Signal dependent means that even if we could calculate their effect, we would have to do so separately for every type of signal we expect. A simple way to get an idea of the effects of limited word length is to model each of the sources of quantisation error as if it were a source of random noise.</p>
+							<img src="gifs/1_quant2.gif" width="256" height="73" title="Quantisation errors modelled as noise" alt="quantisation errors have the same affect as injection of random noise" />
+							<p>The model of quantisation as injections of random noise is helpful in gaining an idea of the effects. But it is not actually accurate, especially for systems with feedback like <a href="../iir/index.htm">IIR filters</a>.</p>
+							<p>The effect of <a href="1_quant.htm">quantisation error</a> is often similar to an injection of random noise.</p>
+							<img src="gifs/1_noise.gif"	width="512" height="194" title="The spectrum calculated from a pure tone" alt="shows the spectrum calculated from a pure tone" />
+							<p>The diagram shows the spectrum calculated from a pure tone</p>
+							<ul>
+							  <li>the top plot shows the spectrum with high precision (double precision floating point)</li>
+								<li>the bottom plot shows the spectrum when the sine wave is quantised to 16 bits</li>
+							</ul>
+							<p>The effect looks very like low level random noise. The signal to noise ratio is affected by the number of bits in the data format, and by whether the data is <a href="../chips/6_data.htm">fixed </a>point or <a href="../chips/6_data.htm">floating</a> point.</p>
+							<img class="right" src="../gifs/buttons.jpg" usemap="#map1" width="171" height="18" title="Forward reverse buttons" alt="click to move backward/forward" />
+							<p>
+					    <map name="map1" id="map1">			          
+			          <area shape="rect" coords="2,3,42,15" href="index.htm" alt="go back to start of module" /><!--go back to start of module -->
+							  <area shape="rect" coords="43,2,84,16" href="1_quant.htm" alt="go back to previous page" /><!--go back to previous page -->
+			          <area shape="rect" coords="84,2,127,15" href="1_summar.htm" alt="go to next page" /><!--go to next page -->
+			          <area shape="rect" coords="126,2,169,16" href="../time/index.htm" alt="go to next module" /> <!--go to next module --> 
+		          </map>
+							<img class="right" src="gifs/copyrite.jpg" width="171" height="20"	alt="Copyrite:Bores Signal Processing" />
+					  </p>
+		      </td>
+			  </tr>
+			</table>	
+			</div>
+			<hr></hr>
+			<div class="footer">
+				<script type="text/javascript" src="../../../scripts/address_level4.js"></script>
+  		</div>
+		</div>		
+	</body>
+</html>

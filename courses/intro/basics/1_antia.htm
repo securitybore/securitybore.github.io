@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/xhtml-strict.dtd">
+<html> 
+	<head>
+	  <!-- validated xhtml -->
+  	<title>Bores Signal Processing - Introduction to DSP - basics: antialiasing</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="keywords" content="Bores signal processing,training,DSP,FIR,IIR,filters,Fast Fourier Transforms,FFT" />
+		<meta name="author" content="Bores Signal Processing" />
+		<meta name="description" content="Training in DSP, software architectures and Philips TriMedia architectures" />
+		<link href="../../../css/global.css" rel="stylesheet" />
+		<script type ="text/javascript">
+			<!--Hide script from old browsers
+			var page = "online_dsp_basics_sec";
+			var section = "index_online_sec_sec";
+			var curr1PageIndex = 1; //sets menu items in menu level 1
+			var curr2PageIndex = 1; //sets menu items in menu level 1
+			var curr3PageIndex = 4; //sets menu items that is highlighted in menu level 3	
+			//end hiding of script -->
+		</script>
+	</head> 
+<body>
+	 <div id="outerWrapper">
+		<div id="innerWrapper">
+			<noscript><p class="declaration">This web site uses Javascript. We use Javascript to improve the user's experience and to enable better maintenance of our site.<br /><br />To be able to view this site properly it is necessary to either <span class="emphasis">enable Javascript</span> or click on <span class="emphasis">allow blocked content</span><br /><br />We promise that we <span class="emphasis">do not:</span></p><ul class="middle"><li>give you content you do not want</li><li>collect any information from your computer</li><li>damage data on your computer</li><li>install software on your computer with or without your consent</li><li>allow someone else to  your computer remotely</li></ul></noscript>
+		<a href="../../../ebooks/art_of_ip.htm"><img class="right" src="../../../ebooks/graphics/art_of_ip.png" alt="The Art of Image Processing - Kindle eBook" title="The Art of Image Processing - Kindle eBook" height="150" width="150" /></a>
+			<img alt="Company logo" title="Bores Signal Processing logo" src="../../../graphics/logo.gif" height="100" width="150" />
+			<h1>Introduction to DSP - basics - antialiasing</h1>
+			<div class="hMenu">
+				<script type="text/javascript" src="../../../scripts/horizontal_menu.js"></script>
+			</div>
+			<table class="main">
+			  <tr>
+					<td class="menuCell">
+						<script type="text/javascript" src="../../../scripts/courses_menu.js"></script>
+					</td>
+					<td class="mainCell">
+					<p>Nyquist showed that to distinguish unambiguously between all signal frequency components we must sample at least twice the frequency of the highest frequency component. To avoid <a href="1_alias.htm">aliasing</a>, we simply filter out all the high frequency components before sampling.</p>
+					<img src="gifs/1_anti.gif" width="512" height="217" title="Sampled high frequency wave" alt="shows a high frequency sine wave that is sampled fast enough according to Nyquist's sampling theorem" />
+					<p>Note that antialias filters must be analogue - it is too late once you have done the sampling.</p>
+					<p>This simple brute force method avoids the problem of <a href="1_alias.htm">aliasing</a>. But it does remove information - if the signal had high frequency components, we cannot now know anything about them.</p>
+					<p>Although Nyquist showed that provide we sample at least twice the highest signal frequency we have all the information needed to reconstruct the signal, the sampling theorem does not say the samples will <span class="emphasis">look like</span> the signal.</p>
+					<img src="gifs/1_wysi.gif" width="512" height="270" title="Low pass filter" alt="shows signal correctly reconstructed using a low pass filter" />
+					<p>The diagram shows a high frequency sine wave that is nevertheless sampled fast enough according to Nyquist's sampling theorem - just more than twice per cycle. When straight lines are drawn between the samples, the signal's frequency is indeed evident - but it looks as though the signal is amplitude modulated. This effect arises because each sample is taken at a slightly earlier part of the cycle. Unlike <a href="1_alias.htm">aliasing</a>, the effect does not change the apparent signal frequency. The answer lies in the fact that the sampling theorem says there is enough information to reconstruct the signal - and the correct reconstruction is not just to draw straight lines between samples.</p>
+					<p>The signal is properly reconstructed from the samples by low pass filtering: the low pass filter should be the same as the original antialias filter.</p><img src="gifs/1_recon.gif" width="512" height="222" title="" alt="" />
+					<p>The reconstruction filter interpolates between the samples to make a smoothly varying analogue signal. In the example, the reconstruction filter interpolates between samples in a 'peaky' way that seems at first sight to be strange. The explanation lies in the shape of the reconstruction filter's impulse response.</p>
+					<img src="gifs/1_recon2.gif" width="256" height="40" title="Reconstruction filter" alt="Reconstruction filter" />
+					<p>The impulse response of the reconstruction filter has a classic 'sin(x)/x shape. The stimulus fed to this filter is the series of discrete impulses which are the samples. Every time an impulse hits the filter, we get 'ringing' - and it is the superposition of all these peaky rings that reconstructs the proper signal. If the signal contains frequency components that are close to the Nyquist, then the reconstruction filter has to be very sharp indeed. This means it will have a very long impulse response - and so the long 'memory' needed to fill in the signal even in region of the low amplitude samples.</p>
+					<img class="right" src="../gifs/buttons.jpg" usemap="#map1" width="171" height="18" title="Forward reverse buttons" alt="click to move backward/forward" />
+					<p>
+					  <map name="map1" id="map1">			          
+			        <area shape="rect" coords="2,3,42,15" href="index.htm" alt="go back to start of module" /><!--go back to start of module -->
+							<area shape="rect" coords="43,2,84,16" href="1_alias.htm" alt="go back to previous page" /><!--go back to previous page -->
+			        <area shape="rect" coords="84,2,127,15" href="1_resol.htm" alt="go to next page" /><!--go to next page -->
+			        <area shape="rect" coords="126,2,169,16" href="../time/index.htm" alt="go to next module" /> <!--go to next module --> 
+		        </map>
+					</p>
+					<img class="right" src="gifs/copyrite.jpg" width="171" height="20"	alt="Copyrite:Bores Signal Processing" />
+		      </td>
+			  </tr>
+			</table>	
+			</div>
+			<hr></hr>
+			<div class="footer">
+				<script type="text/javascript" src="../../../scripts/address_level4.js"></script>
+  		</div>
+		</div>		
+	</body>
+</html>

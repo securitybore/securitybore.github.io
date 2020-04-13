@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/xhtml-strict.dtd">
+<html>
+	<head>
+		<title>Bores Signal Processing - Advanced DSP - FFT windows: FFT as series of filters</title>
+		<!-- validated xhtml -->
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="keywords" content="Bores signal processing, training, DSP, FIR, IIR, filters, Fast Fourier Transforms, FFT, VLIW, aliasing, impulse response, windows, matched filters" />
+		<meta name="author" content="Bores Signal Processing" />
+		<meta name="description" content="Training in DSP, software architectures and Philips TriMedia architectures" />
+		<link href="../../../css/global.css" rel="stylesheet" />
+		<script type ="text/javascript">
+			<!--Hide script from old browsers
+			//intro to dsp index
+			var page = "online_advanced_windows_sec";
+			var section = "index_online_sec_sec";
+			var curr1PageIndex = 2;
+			var curr2PageIndex = 1;
+			var curr3PageIndex = 2;
+			//end hiding of script -->
+		</script>
+	</head>
+	<body>
+		<div id="outerWrapper">
+			<div id="innerWrapper">
+				<noscript><p class="declaration">This web site uses Javascript. We use Javascript to improve the user's experience and to enable better maintenance of our site.<br /><br />To be able to view this site properly it is necessary to either <span class="emphasis">enable Javascript</span> or click on <span class="emphasis">allow blocked content</span><br /><br />We promise that we <span class="emphasis">do not:</span></p><ul class="middle"><li>give you content you do not want</li><li>collect any information from your computer</li><li>damage data on your computer</li><li>install software on your computer with or without your consent</li><li>allow someone else to  your computer remotely</li></ul></noscript>
+				<img class="right" src="../../../graphics/composite_training_banner.jpg" alt="We offer training classes and eBooks on DSP, and in Media Processing (TriMedia)" title="We offer training classes and eBooks on DSP, and in Media Processing (TriMedia)" height="99" width="300" />
+				<img alt="Company logo" title="Bores Signal Processing logo" src="../../../graphics/logo.gif" height="100" width="150" />			
+				<h1 id="heading">Advanced DSP - FFT windows: FFT as series of filters</h1> 
+				<div class="hMenu">
+					<script type="text/javascript" src="../../../scripts/horizontal_menu.js"></script>
+				</div>
+				<table class="main">
+					<tr>
+						<td class="menuCell">
+							<script type="text/javascript" src="../../../scripts/courses_menu.js"></script>
+						</td>
+						<td class="mainCell">
+							<p>A productive way to visualise <a href="../../intro/freq/3_leak.htm">spectral leakage</a> is to view the <a href="../../intro/freq/3_ft.htm">Fourier Transform</a> as equivalent to a series of <a href="../../intro/filters/4_def.htm">filters</a>, one centred on each <a href="10_kern.htm">FFT bin</a>. The filter's <a href="../../intro/filters/4_resp.htm">frequency response</a> is the shape of the <a href="../../intro/freq/3_window.htm">window function</a>'s <a href="10_kern.htm">kernel</a>. Each FFT bin contains contributions from all other <a href="../../intro/freq/3_spect.htm">frequency components</a> within the bandwidth of the filter, weighted by the filter's frequency response (the kernel).</p>
+							<img src="gifs/10_filt.gif" width="512" height="382" title="Spectral leakage" alt="Spectral leakage" /> 
+							<p>The diagram shows the kernel of a rectangular window function. The frequency component we think we are measuring is the FFT bin at the middle of the kernel. But an interfering frequency component some distance away will also contribute to the measured value of this frequency component.</p>
+							<img src="gifs/10_filt2.gif" width="512" height="202" title="Kernal of a rectangular window function" alt="Kernal of a rectangular window function" /> 
+							<p>In fact, the measured value of the FFT bin will include contributions from all frequency component in the bandwidth of the kernel, weighted by the kernel's value at those frequencies. This will include contributions from broad band noise as well as from narrow band signals at other frequencies.</p> 
+							<p>There are two common situations with which we have to deal:</p> 
+							<ul> 
+		  					<li>detection of a frequency component in the presence of broadband noise</li> 
+		  					<li>distinguishing between close narrow band frequency components</li> 
+							</ul> 
+							<p>The choice of window function may be different in the two cases. To help in choosing a suitable window function we need some quantitative measures of the quality of a window function.</p> 
+						<p>
+							<img class="right" src="../../gifs/buttons.jpg" usemap="#map1" width="171" height="18" title="Forward reverse buttons" alt="click to move backward/forward" /> 
+		          <map name="map1" id="map1">
+			          <area shape="rect" coords="2,3,42,15" href="index.htm" alt="go back to start of module" /><!--go back to start of module -->
+			          <area shape="rect" coords="43,2,84,16" href="10_kern.htm" alt="go back to previous page" /><!--go back to previous page -->
+			          <area shape="rect" coords="84,2,127,15" href="10_cpg.htm" alt="go to next page" /><!--go to next page -->
+			          <area shape="rect" coords="126,2,169,16" href="10_end.htm" alt="go to end of module" /><!--go to next module -->  
+		          </map>
+							<img class="right" src="../../gifs/copyrite.jpg" width="171" height="20"	alt="Copyrite:Bores Signal Processing" /> <br /><br /><br /><br />
+		        </p>
+		      </td>
+			  </tr>
+			</table>	
+			</div>
+			<hr></hr>
+			<div class="footer">
+				<script type="text/javascript" src="../../../scripts/address_level4.js"></script>
+  		</div>
+		</div>		
+	</body>
+</html>

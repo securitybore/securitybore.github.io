@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad Software//DTD HoTMetaL PRO 6.0::19990601::extensions to HTML 4.0//EN" "hmpro6.dtd">
+<HTML> 
+  <HEAD>
+	 <META NAME="KEYWORDS"
+	  CONTENT="DSP online teaching signals digital signal processing IIR FIR filters frequency analysis convolution wavelets ">
+	 <META NAME="AUTHOR" CONTENT="Bores Signal Processing"><META NAME="DESCRIPTION"
+	 CONTENT="Vendors of DSP hardware, TriMedia based hardware and teaching in both areas">
+	 
+	 <TITLE>Introduction to DSP -Frequency analysis: Short term Fourier
+		transform:</TITLE> <LINK HREF="../../../css/bores_ws.css" REL="stylesheet"><SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript">
+  var heading = "intro_freq";	//variable to identify which page you are on
+  var page1 = 0;							//variable to identify where to place arrow in main menu, if that is where you are
+  var page2 = 5;	// variable identifies where to place arrow in submenu, if that is where you are
+  var level = "<a href = ../../../"; // variable to insert placement of link
+		var sub1 = 4; // variable //variable to identify how many menu items above the first submenu
+  var sub2 = 1; // variable to identify which address of link2 to insert
+  var sub3 = 3; //variable to identify which address of link 3 to insert
+  var image = "<IMG SRC=../../../gifs/arrow.gif WIDTH=7 HEIGHT=17 BORDER=0 ALIGN = LEFT>"
+
+	
+	
+	
+	
+	
+	
+	 </SCRIPT> <SCRIPT LANGUAGE="Javascript" TYPE="text/javascript" SRC="../../../scripts/newWindow.js"></SCRIPT>
+  </HEAD> 
+  <BODY>
+	 <IMG SRC="../../../gifs/logo.gif" ALT="BORES logo" ALIGN="MIDDLE" WIDTH="150"
+	  HEIGHT="100" BORDER="0" ID="absLogo1"> 
+	 <DIV ID="absImage5"><A
+		HREF="javascript:newWindow('../../venues/AthensGA.htm', 'venue_htm')"><IMG
+		SRC="../../gifs/next_class.jpg"
+		ALT="click for details of our next class" WIDTH="284" HEIGHT="89"
+		BORDER="0"></A></DIV>
+	 <H1 ID="absTitle1">Introduction to DSP</H1> 
+	 <H2 ID="absTitle2">Frequency analysis: Short term Fourier transform</H2> 
+	 <DIV ID="absNavigation1"><SCRIPT TYPE="text/javascript" SRC="../../../scripts/site_navigation.js"></SCRIPT></DIV> 
+	 <DIV ID="absContent1"> 
+		<P>The <A HREF="3_ft.htm">Fourier transform</A> assumes the signal is
+		  analysed over all time - an infinite duration.</P> 
+		<P>This means that there can be no concept of time in the frequency
+		  domain, and so no concept of a frequency changing with time. Mathematically,
+		  frequency and time are orthogonal - you cannot mix one with the other. But we
+		  can easily understand that some signals do have frequency components that
+		  change with time. A piano tune, for example, consists of different notes played
+		  at different times: or speech can be heard as having pitch that rises and falls
+		  over time.</P> 
+		<P>The Short Time Fourier Transform (STFT) tries to evaluate the way
+		  frequency content changes with time:</P><IMG SRC="gifs/3_stft.gif" WIDTH="256"
+		HEIGHT="184"> 
+		<P>The diagram shows how the Short Time Fourier Transform works:</P> 
+		<UL> 
+		  <LI>the signal is chopped up into short pieces</LI> 
+		  <LI>and the Fourier transform is taken of each piece</LI> 
+		</UL> 
+		<P>Each frequency spectrum show the frequency content during a short
+		  time, and so the successive spectra show the evolution of frequency content
+		  with time. The spectra can be plotted one behind the other in a 'waterfall'
+		  diagram as shown.</P> 
+		<P CLASS="dkgreen">It is important to realise that the Short Time Fourier
+		  Transform involves accepting a contradiction in terms because frequency only
+		  has a meaning if we use infinitely long sine waves - and so we cannot apply
+		  Fourier Transforms to short pieces of a signal.</P> 
+		<P><IMG SRC="../gifs/buttons.jpg" USEMAP="#map1" WIDTH="171" HEIGHT="18"
+		  BORDER="0" ALT="backward/forward" ALIGN="RIGHT"> 
+		  <MAP NAME="map1">
+<!--go back to start of module -->
+			 <AREA SHAPE="RECT" COORDS="2,3,42,15" HREF="index.htm"
+			  ALT="go back to start of module">
+			 <AREA SHAPE="RECT" COORDS="43,2,84,16" HREF="3_conv.htm"
+			  ALT="go back to previous page">
+			 <AREA SHAPE="RECT" COORDS="84,2,127,15" HREF="3_period.htm"
+			  ALT="go to next page">
+			 <AREA SHAPE="RECT" COORDS="126,2,169,16" HREF="../filters/index.htm"
+			  ALT="go to next module"> 
+		  </MAP> </P>
+		<IMG SRC="../gifs/copyrite.jpg" WIDTH="171" HEIGHT="20"
+		 ALT="Copyrite:Bores Signal Processing" ALIGN="RIGHT" BORDER="0"> 
+		<DIV ID="relAddress1"><HR WIDTH="800px" ALIGN="LEFT"><SCRIPT TYPE="text/javascript"
+		  SRC="../../../scripts/level4_address.js"></SCRIPT></DIV></DIV> </BODY>
+</HTML>

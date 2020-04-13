@@ -1,0 +1,1 @@
+document.write("<p>We offer a wide variety of classes:<ul><li>standard classes in the U.K. and in the U.S.A.</li><li>standard onsite classes</li><li>customized onsite classes</li></ul>Classes can be 'onsite' anywhere in the world, which saves attendees the hassle and expense of time consuming travel.</p><br />");

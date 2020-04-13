@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad Software//DTD HoTMetaL PRO 6.0::19990601::extensions to HTML 4.0//EN" "hmpro6.dtd">
+<HTML> 
+  <HEAD>
+	 <META NAME="KEYWORDS"
+	  CONTENT="DSP online teaching signals digital signal processing time domain cross correlation convolution autocorrelation">
+	 <META NAME="AUTHOR" CONTENT="Bores Signal Processing"><META NAME="DESCRIPTION"
+	 CONTENT="Vendors of DSP hardware, TriMedia based hardware and teaching in both areas">
+	 
+	 <TITLE>Introduction to DSP - Time domain processing: Correlation
+		functions</TITLE> <LINK HREF="../../../css/bores_ws.css" REL="stylesheet"><SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript">
+  var heading = "intro_time";	//variable to identify which page you are on
+  var page1 = 0;							//variable to identify where to place arrow in main menu, if that is where you are
+  var page2 = 3;	// variable identifies where to place arrow in submenu, if that is where you are
+  var level = "<a href = ../../../"; // variable to insert placement of link
+		var sub1 = 4; // variable //variable to identify how many menu items above the first submenu
+  var sub2 = 1; // variable to identify which address of link2 to insert
+  var sub3 = 2; //variable to identify which address of link 3 to insert
+  var image = "<IMG SRC=../../../gifs/arrow.gif WIDTH=7 HEIGHT=17 BORDER=0 ALIGN = LEFT>"
+
+	
+	
+	
+	
+	
+	
+	
+	 </SCRIPT><SCRIPT LANGUAGE="Javascript" TYPE="text/javascript" SRC="../../../scripts/newWindow.js"></SCRIPT> 
+  </HEAD> 
+  <BODY>
+	 <IMG SRC="../../../gifs/logo.gif" ALT="BORES logo" ALIGN="MIDDLE" WIDTH="150"
+	  HEIGHT="100" BORDER="0" ID="absLogo1"> 
+	 <DIV ID="absImage5"><A
+		HREF="javascript:newWindow('../../venues/AthensGA.htm', 'venue_htm')"><IMG
+		SRC="../../gifs/next_class.jpg"
+		ALT="click for details of our next class" WIDTH="284" HEIGHT="89"
+		BORDER="0"></A></DIV>
+	 <H1 ID="absTitle1">Introduction to DSP</H1> 
+	 <H2 ID="absTitle2">Time domain processing: Correlation functions</H2> 
+	 <DIV ID="absNavigation1"><SCRIPT TYPE="text/javascript" SRC="../../../scripts/site_navigation.js"></SCRIPT></DIV> 
+	 <DIV ID="absContent1"> 
+		<P>The correlation function shows how similar two signals are, and for
+		  how long they remain similar when one is shifted with respect to the other.</P>
+		
+		<P>Correlating a signal with itself is called <A
+		  HREF="2_auto.htm">autocorrelation</A>. Different sorts of signal have
+		  distinctly different autocorrelation functions. We can use these differences to
+		  tell signals apart.</P><IMG SRC="gifs/2_func.gif" WIDTH="512" HEIGHT="290"> 
+		<P>The diagram shows three different types of signal:</P> 
+		<UL> 
+		  <LI>Random noise is defined to be uncorrelated - this means it is only
+			 similar to itself with no shift at all. Even a shift of one sample either way
+			 means there is no correlation at all, so the correlation function of random
+			 noise with itself is a single sharp spike at shift zero.</LI> 
+		  <LI>Periodic signals go in and out of phase as one is shifted with
+			 respect to the other. So they will show strong correlation at any shift where
+			 the peaks coincide. The autocorrelation function of a periodic signal is itself
+			 a periodic signal, with a period the same as that of the original signal.</LI> 
+		  <LI>Short signals can only be similar to themselves for small values of
+			 shift, so their autocorrelation functions are short.</LI> 
+		</UL> 
+		<P>The three types of signal have easily recognisable autocorrelation
+		  functions.</P> 
+		<P><IMG SRC="../gifs/buttons.jpg" USEMAP="#map1" WIDTH="171" HEIGHT="18"
+		  BORDER="0" ALT="backward/forward" ALIGN="RIGHT"> 
+		  <MAP NAME="map1">
+<!--go back to start of module -->
+			 <AREA SHAPE="RECT" COORDS="2,3,42,15" HREF="index.htm"
+			  ALT="go back to start of module"><!--go back to previous page -->
+			 <AREA SHAPE="RECT" COORDS="43,2,84,16" HREF="2_corr.htm"
+			  ALT="go back to previous page"><!--go to next page -->
+			 <AREA SHAPE="RECT" COORDS="84,2,127,15" HREF="2_auto.htm"
+			  ALT="go to next page"><!--go to next module -->
+			 <AREA SHAPE="RECT" COORDS="126,2,169,16"
+			  HREF="../freq/index.htm" ALT="go to next module"> 
+		  </MAP> </P><IMG SRC="../gifs/copyrite.jpg" WIDTH="171" HEIGHT="20"
+		ALT="Copyrite:Bores Signal Processing" ALIGN="RIGHT" BORDER="0"> 
+		<DIV ID="relAddress1"><HR WIDTH="800px" ALIGN="LEFT"><SCRIPT TYPE="text/javascript"
+		  SRC="../../../scripts/level4_address.js"></SCRIPT></DIV></DIV> </BODY>
+</HTML>

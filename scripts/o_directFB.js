@@ -1,0 +1,5 @@
+document.write("<p>DirectFB for Linux is a powerful and efficient software library for graphics and video mixing. It has many features and much potential but some aspects are confusing and there is little documentation or support. Most programs using DirectFB are not using it very well. It is important to understand what DirectFB does and how it works, so that you can use it properly. It is also valuable to know which features to use and which to avoid.</p>;
+document.write("<p>Introduction to DirectFB is a 2-day class that will teach you what DirectFB does, how to use its features, which features to avoid, and how to program it in a consistent and logical way.</p>");
+document.write("<h3>Class content:</h3>");
+document.write("<ul><li>DirectFB in overview</li><li>Graphics and video mixing</li><li>Surfaces, Layers and Windows</li><li>Surface management functions</li><li>Drawing functions</li><li>Image and VideoProviders</li><li>Video mixing functions</li><li>Window management</li><li>Input devices and events</li></ul>");
+document.write("<div class=\"right\"><a href=\"javascript:newWindow('courses/files/directFB.pdf', 'pdf')\">class leaflet</a></div>");
