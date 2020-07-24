@@ -1,1 +1,0 @@
-document.write("<p>Our classes can be given 'on site' anywhere in the world. This reduces cost as you don't have to spend time and money travelling.</p>");
