@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bores Consultancy Ltd</title>
+    <link>https://bores/</link>
+    <description>Recent content on Bores Consultancy Ltd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <copyright>Copyright &amp;copy; 2020 [Bores Ltd](https://bores.com) All Rights Reserved</copyright>
+    
+	<atom:link href="https://bores/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Advanced Threat Modelling</title>
+      <link>https://bores/classes/advanced_threat/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bores/classes/advanced_threat/</guid>
+      <description>If you have now seen the benefits of threat modelling and decided the introductory workshop isn&amp;rsquo;t enough, our advanced course is a four day course for up to ten delegates. Delegates will delve into the fundamentals of the different approaches and how to use them effectively to ensure security by design.</description>
+    </item>
+    
+    <item>
+      <title>Consultancy</title>
+      <link>https://bores/consultancy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bores/consultancy/</guid>
+      <description>Getting to a level of security suitable for your business requires a thorough understanding of the security domain, and a willingness to listen to your organisation. There is no one size fits all when designing appropriate security, whether it&amp;rsquo;s guiding you through building a full security programme, or overcoming one obstacle.</description>
+    </item>
+    
+    <item>
+      <title>Introduction to Threat Modelling</title>
+      <link>https://bores/classes/intro_threat/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bores/classes/intro_threat/</guid>
+      <description>This two hour Introduction to Threat Modelling workshop walks through the fundamental approaches to threat modelling - focused on the threat, the impact, or the vulnerability. Exercises take you through a method from each approach, illustrating how to begin using threat modelling to build security into your design at a fundamental level.</description>
+    </item>
+    
+    <item>
+      <title>Secure by Scenario</title>
+      <link>https://bores/classes/scenario/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bores/classes/scenario/</guid>
+      <description>This bespoke workshop involves initial consultation with your organisation to build out a tailored and realistic scenario. In a moderated workshop we will then work with groups of your people to run through the scenario in stages, establishing responses and communication flows, and helping you to prepare for the worst from every angle.</description>
+    </item>
+    
+  </channel>
+</rss>
