@@ -10,6 +10,8 @@
   
   <meta name="generator" content="Hugo 0.63.1" />
 
+  
+
   <!-- plugins -->
   
   <link rel="stylesheet" href="https://bores.com/plugins/bootstrap/bootstrap.min.css">
@@ -29,7 +31,40 @@
   <link rel="shortcut icon" href="https://bores.com/images/favicon.png" type="image/x-icon">
   <link rel="icon" href="https://bores.com/images/favicon.png" type="image/x-icon">
 
-</head><body>
+  <script>
+    const cyrb53 = function(str, seed = 0) {
+       let h1 = 0xdeadbeef ^ seed,
+          h2 = 0x41c6ce57 ^ seed;
+       for (let i = 0, ch; i < str.length; i++) {
+          ch = str.charCodeAt(i);
+          h1 = Math.imul(h1 ^ ch, 2654435761);
+          h2 = Math.imul(h2 ^ ch, 1597334677);
+       }
+       h1 = Math.imul(h1 ^ h1 >>> 16, 2246822507) ^ Math.imul(h2 ^ h2 >>> 13, 3266489909);
+       h2 = Math.imul(h2 ^ h2 >>> 16, 2246822507) ^ Math.imul(h1 ^ h1 >>> 13, 3266489909);
+       return 4294967296 * (2097151 & h2) + (h1 >>> 0);
+    };
+
+    let clientIP = "{$_SERVER['REMOTE_ADDR']}";
+    let validityInterval = Math.round (new Date() / 1000 / 3600 / 24 / 4);
+    let clientIDSource = clientIP + ";" + window.location.host + ";" + navigator.userAgent + ";" + navigator.language + ";" + validityInterval;
+    let clientIDHashed = cyrb53(clientIDSource).toString(16);
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-56377626-3', {
+       'storage': 'none',
+       'clientId': clientIDHashed
+    });
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+  </script>
+
+</head>
+<body>
 <!-- preloader start -->
 <div class="preloader">
   
@@ -71,6 +106,10 @@
                   
                 </ul>
               </li>
+              
+              
+              
+              <li><a href="https://bores.com/media">Media</a></li>
               
               
               
@@ -121,10 +160,10 @@
       <div class="col-md-6">
         <h2 class="mt-40">Today</h2>
         <p>It’s a new era for Bores as James Bore takes over the helm from his parents, Chris and Sarah who retired in 2020.</p>
-<p>The ethos devised and maintained by his parents of building close relationships with clients as well as helping clients to help themselves when it comes to technology is still the backbone of Bores. Customer relationships are still key, and James hopes to continue working with the solid client base his parents have built up over the past 30+ years.</p>
-<p>Whilst wanting to maintain the essence of the business as set by Chris and Sarah, James also has some exciting plans for the future of Bores. He is steering the focus of the company more onto digital, data and cyber security, and is offering a consultancy service. He will be working closely with his network to deliver the best service for his clients.</p>
+<p>The ethos devised and maintained by his parents of building close relationships with clients as well as helping clients to help themselves when it comes to technology is still the backbone of the new Bores.</p>
+<p>Whilst wanting to maintain the essence of the business as set by Chris and Sarah, James also has some exciting plans for the new incarnation Bores. He is focusing on digital, data and cyber security, and is offering a consultancy service. He will be working closely with his network to deliver the best service for his clients.</p>
 <p>James has an MSc in Cyber Security from Northumbria University, and has worked in IT support, security, development, architecture and engineering. Cyber security is, however, his passion and he has made an international name for himself through speaking at international conferences, writing for magazines as well as contributing book chapters on insider and security threats.</p>
-<p>James is not new to the family business and has been working on an ad hoc basis with his parents since 2005. He was more than happy to take this position at the helm when his parents retired as he was passionate about keeping the family business going. He feels it is a piece of history. Not only for his family but for the technology industry.</p>
+<p>James is not new to the family business and has been working on an ad hoc basis with his parents since 2005. He was more than happy to carry forward the Bores name when his parents retired as he was passionate about keeping the family business going. He feels it is a piece of history. Not only for his family but for the technology industry.</p>
 <p>He intends to continue with the training aspect of the business and wants to offer a practical approach to genuine security improvement.</p>
 
         
@@ -305,6 +344,15 @@
               <div class="user">
                 <img src="/images/clients/phelim_rowe.jpg" alt="client">
                 <p><span>Phelim Rowe</span> Director of Events</p>
+              </div>
+            </div>
+            
+            <div>
+              <i class="ion-quote"></i>
+              <p>"James was very helpful and friendly whilst working with us to ensure our GDPR was compliant, he was very efficient and knowledgeable on the subject. We would recommend contacting James if you ned any assistance with GDPR compliance."</p>
+              <div class="user">
+                <img src="/images/clients/srl.jpg" alt="client">
+                <p><span>Samantha Ing</span> SRL Accounting Ltd</p>
               </div>
             </div>
             

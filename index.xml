@@ -21,12 +21,21 @@
     </item>
     
     <item>
+      <title>Coffee Morning</title>
+      <link>https://bores.com/coffee/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bores.com/coffee/</guid>
+      <description>Sorry about this, it shouldn&amp;rsquo;t be more than a few seconds to redirect you. Looking forward to a good chat over coffee hopefully soon (coffee is optional for anyone other than me).</description>
+    </item>
+    
+    <item>
       <title>Consultancy</title>
       <link>https://bores.com/consultancy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://bores.com/consultancy/</guid>
-      <description>Getting to a level of security suitable for your business requires a thorough understanding of the security domain, and a willingness to listen to your organisation. There is no one size fits all when designing appropriate security, whether it&amp;rsquo;s guiding you through building a full security programme, or overcoming one obstacle.</description>
+      <description>Getting to a level of security suitable for your business requires a thorough understanding of the security domain, and a willingness to listen to your organisation. There is no one size fits all when designing appropriate security.</description>
     </item>
     
     <item>
@@ -36,6 +45,33 @@
       
       <guid>https://bores.com/classes/intro_threat/</guid>
       <description>This two hour Introduction to Threat Modelling workshop walks through the fundamental approaches to threat modelling - focused on the threat, the impact, or the vulnerability. Exercises take you through a method from each approach, illustrating how to begin using threat modelling to build security into your design at a fundamental level.</description>
+    </item>
+    
+    <item>
+      <title>Media</title>
+      <link>https://bores.com/media/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bores.com/media/</guid>
+      <description>Over the years Chris and James have done a fair bit of writing, as well as providing interviews and expert commentary for the media. To request an interview, simply use our contact form.</description>
+    </item>
+    
+    <item>
+      <title>Pub Quiz</title>
+      <link>https://bores.com/introquiz/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bores.com/introquiz/</guid>
+      <description>You should be redirected to the quiz form in a few seconds. If you aren&amp;rsquo;t (or don&amp;rsquo;t want to wait), you can click the link here to get there.</description>
+    </item>
+    
+    <item>
+      <title>Pub Quiz</title>
+      <link>https://bores.com/owaspquiz/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bores.com/owaspquiz/</guid>
+      <description>You should be redirected to the quiz form in a few seconds. If you aren&amp;rsquo;t (or don&amp;rsquo;t want to wait), you can click the link here to get there.</description>
     </item>
     
     <item>
