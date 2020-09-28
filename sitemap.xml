@@ -7,10 +7,6 @@
   </url>
   
   <url>
-    <loc>https://bores.com/classes/advanced_threat/</loc>
-  </url>
-  
-  <url>
     <loc>https://bores.com/</loc>
   </url>
   
@@ -43,6 +39,10 @@
   </url>
   
   <url>
+    <loc>https://bores.com/playingatsecurity/</loc>
+  </url>
+  
+  <url>
     <loc>https://bores.com/privacy/</loc>
   </url>
   
@@ -51,7 +51,7 @@
   </url>
   
   <url>
-    <loc>https://bores.com/owaspquiz/</loc>
+    <loc>https://bores.com/speakerhub/</loc>
   </url>
   
   <url>
@@ -60,6 +60,14 @@
   
   <url>
     <loc>https://bores.com/tags/</loc>
+  </url>
+  
+  <url>
+    <loc>https://bores.com/classes/owasp_threat/</loc>
+  </url>
+  
+  <url>
+    <loc>https://bores.com/owaspquiz/</loc>
   </url>
   
 </urlset>
