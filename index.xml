@@ -12,6 +12,25 @@
     
     
     <item>
+      <title>Ask the Duck</title>
+      <link>https://bores.com/asktheduck/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bores.com/asktheduck/</guid>
+      <description>Your email:Your question:Submitwindow.onload = function() { Calendly.initBadgeWidget({ url: &#39;https://calendly.com/boresltd/duck&#39;, text: &#39;Arrange a call&#39;, color: &#39;#32b1ae&#39;, textColor: &#39;#ffffff&#39;, branding: false }); }</description>
+    </item>
+    
+    <item>
+      <title>Attack Surface Assessment</title>
+      <link>https://bores.com/asa/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bores.com/asa/</guid>
+      <description>Not all attacker groups are opportunistic chancers who rely on volume and a bit of luck to breach an organisation, some take a more strategic approach.
+Our attack surface assessment involves the same passive reconnaissance effort that a more strategic group will take to find ways in, work out who in your organisation to target, and discover weak points.</description>
+    </item>
+    
+    <item>
       <title>Coffee Morning</title>
       <link>https://bores.com/coffee/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -27,7 +46,6 @@
       
       <guid>https://bores.com/consultancy/</guid>
       <description>Getting to a level of security suitable for your business requires a thorough understanding of the security domain, and a willingness to listen to your organisation. There is no one size fits all when designing appropriate security.</description>
-<<<<<<< HEAD
     </item>
     
     <item>
@@ -37,8 +55,6 @@
       
       <guid>https://bores.com/failsafe/</guid>
       <description>Our Fail Safely workshops, built on the Secure by Scenario framework, provide a cost-effect, immersive, team-based tabletop exercise to simultaneously educate staff and test incident response planning. Scenarios are immersive and open-ended, adapting to the actions your team declares rather than expecting everyone involved to follow a strict script which models a perfect reality.</description>
-=======
->>>>>>> 4a7af8d21b24de5c85a338315a45c0cf6c4e246d
     </item>
     
     <item>
@@ -51,12 +67,30 @@
     </item>
     
     <item>
+      <title>Managed Vulnerability Management</title>
+      <link>https://bores.com/mvm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bores.com/mvm/</guid>
+      <description>Let&amp;rsquo;s face it, the biggest pain in dealing with vulnerabilities is usually not in the remediation, but in deciding what needs to be remediated. The data coming in from scanners can be overwhelming for technical teams who simply end up sprinting to try and keep up.</description>
+    </item>
+    
+    <item>
       <title>Media</title>
       <link>https://bores.com/media/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://bores.com/media/</guid>
       <description>Over the years Chris and James have done a fair bit of writing, as well as providing interviews and expert commentary for the media. To request an interview, simply use our contact form.</description>
+    </item>
+    
+    <item>
+      <title>Media</title>
+      <link>https://bores.com/press/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bores.com/press/</guid>
+      <description>Press  Daily Mail Guardian Telegraph  Over the years Chris and James have done a fair bit of writing, as well as providing interviews and expert commentary for the media.</description>
     </item>
     
     <item>
